@@ -1,15 +1,11 @@
 let userinfopopup;
 let stockdesdonner = [];
-let employe ={
-    id:"",
-    nome:"",
-    role:"",
-    photo:"",
-    email:"",
-    telephone:"",
-    expériences:""
-}
 
+let Add_New_Worker_space= document.querySelector(".Add-New-Worker")
+let newworker;
+let Nom ;
+
+/////////
 function btn_add_new_worker(){
     
     if(document.getElementsByClassName("father").length>0){
@@ -21,8 +17,8 @@ function btn_add_new_worker(){
     
     <div class="father">
 
-        <label class="Nom" for="">Nom</label>
-        <input class="" type="text" placeholder="">
+        <label  for="">Nom</label>
+        <input class="Nom" type="text" placeholder="entrer le nom">
         <label class="" for="">Role</label>
         <select class="form-input" id="role" required>
             <option value="">Sélectionnez un rôle</option>
@@ -42,7 +38,7 @@ function btn_add_new_worker(){
         <div class="btn-container">
 
             <button class="cancel" onclick="exituserinfopopup()">cancel</button>
-            <button class="submit">submit</button>
+            <button class="submit" onclick="submituserinfopopup()">submit</button>
         </div>
 
     </div>
@@ -50,7 +46,12 @@ function btn_add_new_worker(){
     `
   
  document.body.append(userinfopopup)
-        
+        Nom = document.querySelector(".Nom")
+        // role = document.querySelector("")
+        // photo = document.querySelector("")
+        // email = document.querySelector("")
+        // telephone = document.querySelector("")
+        // expériences = document.querySelector("")
     }
  
    
@@ -59,4 +60,24 @@ function exituserinfopopup(){
 
     userinfopopup.remove()
     
+}
+function submituserinfopopup(){
+    console.log(Nom.value)
+    userinfopopup.remove()
+    newworker = document.createElement("div")
+    newworker.className="newworker"
+    let employe ={
+    id:"",
+    nome: Nom.value,
+    role:"",
+    photo:"",
+    email:"",
+    telephone:"",
+    expériences:""
+}
+newworker.innerHTML=` <div class="name">nome: ${employe.nome}</div>   `
+
+
+    Add_New_Worker_space.append(newworker)
+   
 }

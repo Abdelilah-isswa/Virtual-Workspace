@@ -69,7 +69,7 @@ body {
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+   
 }
 
 /* forth */
@@ -166,5 +166,12 @@ justify-content: space-between;
     display: flex;
     justify-content: center;
     align-items: center;
+     backdrop-filter: blur(12px);
 
+}
+.newworker{
+ 
+    height: 100px;
+    width: 80%;
+    background-color: green;
 }
