@@ -145,10 +145,11 @@ option{
 .submit,
 .cancel {
     height: 40px;
-    font-size: 1.2rem;
-    font-weight: 400;
+ 
     width: 80%;
     border-radius: 5px;
+       font-size: 1.2rem;
+    font-weight: 400;
 
 }
 
@@ -195,5 +196,36 @@ justify-content: space-between;
     margin: 10px;
     background-color: green;
     border:  2px solid red;
-    display: block;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.userimg{
+    border-radius: 100px;
+    height: 90px;
+    width: 90px;
+}
+.workerinfo{
+background-color: yellow;
+width: 40%;
+height: 80px;
+
+}
+.deletworker , .editworker{
+    height: 30px;
+    width: 100px;
+       border-radius: 5px;
+       font-size: 1.2rem;
+    font-weight: 400;
+     border: none;
+}
+.workerbtn{
+background-color: green;
+    
+}
+.deletworker{
+    background-color: red;
+   
+
 }

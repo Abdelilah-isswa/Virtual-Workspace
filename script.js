@@ -75,7 +75,20 @@ function submituserinfopopup(){
     telephone:"",
     expériences:""
 }
-newworker.innerHTML=` <div class="name">nome: ${employe.nome}</div>   `
+                          //<div  newworker
+newworker.innerHTML=`   
+   <img  class="userimg" src="img/img1.webp" alt="">
+     <div class="workerinfo">
+       
+        <div class="name">${employe.nome}</div>
+       <div class="role">${employe.role}</div>
+     </div>
+    
+    <div class="workerbtn">
+        <button class="editworker" >edit</button>
+        <button class="deletworker" >delet</button>
+   
+    </div>`
 
 
     Add_New_Worker_space.append(newworker)
