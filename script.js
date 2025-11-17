@@ -1,20 +1,20 @@
 let userinfopopup;
 let stockdesdonner = [];
 
-let Add_New_Worker_space= document.querySelector(".Add-New-Worker")
+let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
-let Nom ;
-let id;
+let Nom;
+let id ;
 
 /////////
-function btn_add_new_worker(){
-    
-    if(document.getElementsByClassName("father").length>0){
-        
-    }else{
-               userinfopopup= document.createElement("div")
-    userinfopopup.className="bigerfather"
-    userinfopopup.innerHTML=`
+function btn_add_new_worker() {
+
+    if (document.getElementsByClassName("father").length > 0) {
+
+    } else {
+        userinfopopup = document.createElement("div")
+        userinfopopup.className = "bigerfather"
+        userinfopopup.innerHTML = `
     
     <div class="father">
 
@@ -45,8 +45,8 @@ function btn_add_new_worker(){
     </div>
     
     `
-  
- document.body.append(userinfopopup)
+
+        document.body.append(userinfopopup)
         Nom = document.querySelector(".Nom")
         // role = document.querySelector("")
         // photo = document.querySelector("")
@@ -54,38 +54,37 @@ function btn_add_new_worker(){
         // telephone = document.querySelector("")
         // expériences = document.querySelector("")
     }
- 
-   
+
+
 }
-function exituserinfopopup(){
+function exituserinfopopup() {
 
     userinfopopup.remove()
-    
+
 }
-function submituserinfopopup(){
-    console.log(Nom.value)
-    if(typeof id ==='undefined'){
-        id=0;
-    }
+function submituserinfopopup() {
+    
+
+  
     userinfopopup.remove()
     newworker = document.createElement("div")
-    newworker.className="newworker"
-    let employe ={
-    id:id,
-    nome: Nom.value,
-    role:"",
-    photo:"",
-    email:"",
-    telephone:"",
-    expériences:""
-}
-  
+    newworker.className = "newworker"
+    let employe = {
+        id: stockdesdonner.length,
+        nome: Nom.value,
+        role: "",
+        photo: "",
+        email: "",
+        telephone: "",
+        expériences: ""
+    }
 
-stockdesdonner.push(employe)
-console.log(stockdesdonner)
 
-                          //<div  newworker
-newworker.innerHTML=`   
+    stockdesdonner.push(employe)
+
+
+    //<div  newworker
+    newworker.innerHTML = `   
    <img  class="userimg" src="img/img1.webp" alt="">
      <div class="workerinfo">
        
@@ -95,21 +94,47 @@ newworker.innerHTML=`
     
     <div class="workerbtn">
         <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-        <button class="deletworker" onclick="deletuser(${id})">delet</button>
+        <button class="deletworker" onclick="deletuser(${employe.id})">delet</button>
    
     </div>`
 
-
+    console.log("employe.id",employe.id)
     Add_New_Worker_space.append(newworker)
-     id++;
-   
-}
-function deletuser(id){ 
- //fix probleme   
-  //let y =  stockdesdonner[id].splice(id,1)
-  console.log(y)
-//    console.log(stockdesdonner)
-    
-    
+    console.log("arry",stockdesdonner)
 
 }
+function deletuser(id) {
+    console.log(" the id that you whantto delet:",id)
+    
+    Add_New_Worker_space.innerHTML=''
+ 
+
+    for(let i =0 ;i<stockdesdonner.length;i++){
+       if(stockdesdonner[i].id ===id){
+         stockdesdonner.splice(id,1)
+
+          newworker = document.createElement("div")
+        newworker.className = "newworker"
+                newworker.innerHTML=`   
+            <img  class="userimg" src="img/img1.webp" alt="">
+              <div class="workerinfo">
+                 <div class="name">${stockdesdonner[i].nome}</div>
+               <div class="role"></div>
+              </div>
+             <div class="workerbtn">
+                 <button class="editworker" onclick="btn_add_new_worker()">edit</button>
+                 <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+             </div>`
+        
+       }
+        Add_New_Worker_space.append(newworker)
+
+    }
+
+
+
+
+
+
+}
+
