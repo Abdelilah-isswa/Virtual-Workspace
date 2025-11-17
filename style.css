@@ -29,21 +29,56 @@ body{
    
    
 }
+/* first */
 .container{
     background-color:  aqua;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
+/*  second  */
 .side-bar{
     background-color: lightcoral;
     height: 100%;
     width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .zone-main{
     background-color: rgb(58, 134, 255);
         height: 100%;
-        width: 1300px;
+        width: 1400px;
 
+}
+/* third */
+.Unassigned-Staff{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+   
+        width: 90%;
+        box-shadow: 0 1.25em 3.43em (0,0,0,0.8);
+}
+.Add-New-Worker{
+    height: 90%;
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+/* forth */
+.btn-add-new-worker{
+    height: 100px;
+    background-color: rgb(251, 86, 7);
+    width: 90%;
+    border: none;
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
 }
