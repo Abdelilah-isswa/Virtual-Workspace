@@ -4,6 +4,7 @@ let stockdesdonner = [];
 let Add_New_Worker_space= document.querySelector(".Add-New-Worker")
 let newworker;
 let Nom ;
+let id;
 
 /////////
 function btn_add_new_worker(){
@@ -63,11 +64,14 @@ function exituserinfopopup(){
 }
 function submituserinfopopup(){
     console.log(Nom.value)
+    if(typeof id ==='undefined'){
+        id=0;
+    }
     userinfopopup.remove()
     newworker = document.createElement("div")
     newworker.className="newworker"
     let employe ={
-    id:"",
+    id:id,
     nome: Nom.value,
     role:"",
     photo:"",
@@ -75,6 +79,11 @@ function submituserinfopopup(){
     telephone:"",
     expériences:""
 }
+  
+
+stockdesdonner.push(employe)
+console.log(stockdesdonner)
+
                           //<div  newworker
 newworker.innerHTML=`   
    <img  class="userimg" src="img/img1.webp" alt="">
@@ -85,12 +94,22 @@ newworker.innerHTML=`
      </div>
     
     <div class="workerbtn">
-        <button class="editworker" >edit</button>
-        <button class="deletworker" >delet</button>
+        <button class="editworker" onclick="btn_add_new_worker()">edit</button>
+        <button class="deletworker" onclick="deletuser(${id})">delet</button>
    
     </div>`
 
 
     Add_New_Worker_space.append(newworker)
+     id++;
    
+}
+function deletuser(id){ 
+ //fix probleme   
+  //let y =  stockdesdonner[id].splice(id,1)
+  console.log(y)
+//    console.log(stockdesdonner)
+    
+    
+
 }
