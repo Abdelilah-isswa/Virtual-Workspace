@@ -1,0 +1,231 @@
+/* 58, 134, 255 */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {}
+
+@media (max-width:767px) {}
+
+@media (min-width:768px)and(max-width:1023px) {}
+
+@media (min-width:1023px)and(max-width:1279px) {}
+
+@media (min-width:1280px) {}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    background-color: rgb(58, 134, 255);
+
+
+}
+
+/* first */
+.container {
+    background-color: aqua;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/*  second  */
+.side-bar {
+    background-color: lightcoral;
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zone-main {
+    background-color: rgb(58, 134, 255);
+    height: 100%;
+    width: 1400px;
+
+}
+
+/* third */
+.Unassigned-Staff {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    width: 90%;
+    box-shadow: 0 1.25em 3.43em (0, 0, 0, 0.8);
+}
+
+.Add-New-Worker {
+    height: 90%;
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+/* forth */
+.btn-add-new-worker {
+    height: 100px;
+    background-color: rgb(251, 86, 7);
+    width: 90%;
+    border: none;
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+    
+}
+
+
+
+/* part2 */
+/* popup in js */
+.father {
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    height: 80%;
+    width: 50%;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-shadow: 25px 25px 30px rgb(0,0,0,0.1);
+    
+}
+label{
+     margin-left: 10%;
+     background-color: red;
+    
+}
+
+input[type="text"] ,input[type="tel"]{
+    border: none;
+    height: 30px;
+    border: 2px solid #d1d3d4;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    width: 80%;
+     margin-left: 10%;
+}
+
+input[type="text"]:focus {
+    border: rgb(255, 0, 0) 2px solid;
+
+
+
+}
+select{
+       border: none;
+    height: 30px;
+    border: 2px solid #d1d3d4;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    width: 80%;
+     margin-left: 10%;
+     
+     
+}
+option{
+    background-color: red;
+   
+}
+.submit,
+.cancel {
+    height: 40px;
+ 
+    width: 80%;
+    border-radius: 5px;
+       font-size: 1.2rem;
+    font-weight: 400;
+
+}
+
+.submit {
+    background-color: blue;
+    border: none;
+
+    color: white;
+  width: 40%;
+
+}
+
+.cancel {
+    background-color: white;
+    border: 2px solid #d1d3d4;
+    width: 40%;
+}
+.btn-container{
+    
+    width: 80%;
+    display: flex;
+justify-content: space-between;    
+ margin-left: 10%;
+}
+.bigerfather{
+    height: 100%;
+      position: absolute;
+      top: 0px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.622);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     backdrop-filter: blur(12px);
+
+}
+
+/* end popup in js */
+/* start part add workers to unsined */
+.newworker{
+ 
+    height: 100px;
+    width: 80%;
+    margin: 10px;
+    background-color: green;
+    border:  2px solid red;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.userimg{
+    border-radius: 100px;
+    height: 90px;
+    width: 90px;
+}
+.workerinfo{
+background-color: yellow;
+width: 40%;
+height: 80px;
+
+}
+.deletworker , .editworker{
+    height: 30px;
+    width: 100px;
+       border-radius: 5px;
+       font-size: 1.2rem;
+    font-weight: 400;
+     border: none;
+}
+.workerbtn{
+background-color: green;
+    
+}
+.deletworker{
+    background-color: red;
+   
+
+}
