@@ -4,7 +4,7 @@ let stockdesdonner = [];
 
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
-let Nom;
+let Nom,role,photo,email,telephone,expériences;
 let idx = 0;
 let son1arry =[];
 let x=0;
@@ -20,18 +20,18 @@ let partexperience;
 //////
 function btn_add_new_worker() {
 
-    if (document.getElementsByClassName("father").length > 0) {
+    // if (document.getElementsByClassName("father").length > 0) {
 
-    } else {
+    // } else {
         userinfopopup = document.createElement("div")
         userinfopopup.className = "bigerfather"
         userinfopopup.innerHTML = `
     
-                <div class="father">
+        <div class="father">
 
-        <label  for="">Nom</label>
-        <input class="Nom" type="text" placeholder="entrer le nom">
-        <label class="" for="">Role</label>
+        <label  for="Nom">Nom</label>
+        <input class="Nom" type="text" placeholder="entrer le nom" required id="Nom">
+        <label class="" for="role">Role</label>
         <select class="form-input" id="role" required>
             <option value="">Sélectionnez un rôle</option>
             <option value="manager">Manager</option>
@@ -40,13 +40,13 @@ function btn_add_new_worker() {
             <option value="security">Agent de sécurité</option>
             <option value="cleaning">Nettoyage</option>
         </select>
-        <label class="" for="">Photo</label>
-        <input class="" type="text">
-        <label class="" for="">Email</label>
+        <label class="" for="Photo" >Photo</label>
+        <input class="Photo" type="text" id="Photo" required>
+        <label class="" for="email">Email</label>
         
         <input  type="text" placeholder="jean.dupont@worksphere.com" id="email" required>
-        <label class="" for="">Téléphone</label>
-        <input class="form-input" type="tel" placeholder="01 23 45 67 89" id="phone" required>
+        <label class="" for="phone">Téléphone</label>
+        <input class="" type="tel" placeholder="01 23 45 67 89" id="phone" required >
        
 
 
@@ -55,17 +55,19 @@ function btn_add_new_worker() {
             <button class="cancel" onclick="exituserinfopopup()">cancel</button>
             <button class="submit" onclick="submituserinfopopup()">submit</button>
         </div>
+        
+    </div>
     
     `
 
         document.body.append(userinfopopup)
         Nom = document.querySelector(".Nom")
-        // role = document.querySelector("")
-        // photo = document.querySelector("")
-        // email = document.querySelector("")
-        // telephone = document.querySelector("")
-        // expériences = document.querySelector("")
-    }
+        role = document.querySelector("#role")     
+        photo = document.querySelector("#Photo")
+        email = document.querySelector("#email")
+        telephone = document.querySelector("#phone")
+       // expériences = document.querySelector("")
+   // }
  
 
 }
@@ -84,7 +86,11 @@ function usersendtoworkpopup() {
 function submituserinfopopup() {
 
 
-
+ if(Nom.value==="" || role.value==""){
+     alert("Enter The info")
+     userinfopopup.remove()
+     btn_add_new_worker()
+ }else{
     userinfopopup.remove()
     newworker = document.createElement("div")
     newworker.className = "newworker"
@@ -93,10 +99,10 @@ function submituserinfopopup() {
         employe = {
             id: idx,
             nome: Nom.value,
-            role: "",
-            photo: "",
-            email: "",
-            telephone: "",
+            role: role.value,
+            photo: photo.value,
+            email: email.value,
+            telephone: telephone.value,
             expériences: ""
         }
 
@@ -105,17 +111,17 @@ function submituserinfopopup() {
         employe = {
             id: idx,
             nome: Nom.value,
-            role: "",
-            photo: "",
-            email: "",
-            telephone: "",
+            role: role.value,
+            photo: photo.value,
+            email: email.value,
+            telephone: telephone.value,
             expériences: ""
         }
 
     }
     console.log("id", employe.id)
     stockdesdonner.push(employe)
-
+    console.log("stockdesdonner : ",stockdesdonner)
     idx++;
     //<div  newworker
     newworker.innerHTML = `   
@@ -138,6 +144,7 @@ function submituserinfopopup() {
 
 
     Add_New_Worker_space.append(newworker)
+ }
 }
 function deletuser(id) {
     console.log(" the id that you whant to delet:", id)
@@ -365,8 +372,11 @@ function addexperience(){
   let father =document.querySelector(".father")
      experiencefild = document.createElement("div")
         experiencefild.className="partexperience"
-        experiencefild.innerHTML = `<input class="" type="text">`
+        experiencefild.innerHTML = `
+        <label class="" for="experiences">experiences</label>
+        <input class="" id="experiences" type="text">`
        
       father.append(experiencefild)
+      expériences = document.querySelector("#experiences")
 
 }
