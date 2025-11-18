@@ -4,7 +4,7 @@ let stockdesdonner = [];
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
 let Nom;
-let id ;
+let idx =0;
 
 /////////
 function btn_add_new_worker() {
@@ -69,8 +69,10 @@ function submituserinfopopup() {
     userinfopopup.remove()
     newworker = document.createElement("div")
     newworker.className = "newworker"
-    let employe = {
-        id: stockdesdonner.length,
+    let employe
+    if (idx> 0){
+     employe = {
+        id:idx ,
         nome: Nom.value,
         role: "",
         photo: "",
@@ -78,11 +80,24 @@ function submituserinfopopup() {
         telephone: "",
         expériences: ""
     }
-
-
+        
+    }else{
+        
+ employe = {
+        id: idx ,
+        nome: Nom.value,
+        role: "",
+        photo: "",
+        email: "",
+        telephone: "",
+        expériences: ""
+    }
+    
+    }
+    console.log("id",employe.id)
     stockdesdonner.push(employe)
 
-
+    idx++;
     //<div  newworker
     newworker.innerHTML = `   
    <img  class="userimg" src="img/img1.webp" alt="">
@@ -99,42 +114,56 @@ function submituserinfopopup() {
     </div>`
 
     console.log("employe.id",employe.id)
-    Add_New_Worker_space.append(newworker)
+  
     console.log("arry",stockdesdonner)
 
+
+      Add_New_Worker_space.append(newworker)
 }
-function deletuser(id) {
-    console.log(" the id that you whantto delet:",id)
-    
+ function deletuser(id) {
+     console.log(" the id that you whant to delet:",id)
+  
     Add_New_Worker_space.innerHTML=''
- 
+    let indextodeletinarry;
+    for(let i=0;i<stockdesdonner.length;i++){
 
-    for(let i =0 ;i<stockdesdonner.length;i++){
-       if(stockdesdonner[i].id ===id){
-         stockdesdonner.splice(id,1)
-
-          newworker = document.createElement("div")
-        newworker.className = "newworker"
-                newworker.innerHTML=`   
-            <img  class="userimg" src="img/img1.webp" alt="">
-              <div class="workerinfo">
-                 <div class="name">${stockdesdonner[i].nome}</div>
-               <div class="role"></div>
-              </div>
-             <div class="workerbtn">
-                 <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-                 <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
-             </div>`
-        
-       }
-        Add_New_Worker_space.append(newworker)
-
+        if(stockdesdonner[i].id===id){
+            indextodeletinarry=i;
+        }
     }
+    stockdesdonner.splice(indextodeletinarry,1)
 
+      for (let i = 0; i < stockdesdonner.length; i++) {
+         newworker = document.createElement("div")
+         newworker.className = "newworker"
+             newworker.innerHTML = `   
+     <img  class="userimg" src="img/img1.webp" alt="">
+       <div class="workerinfo">
+          <div class="name">${stockdesdonner[i].nome}</div>
+         <div class="role"></div>
+       </div>
+      <div class="workerbtn">
+          <button class="editworker" onclick="btn_add_new_worker()">edit</button>
+          <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+      </div>`
+          Add_New_Worker_space.append(newworker)
+      }
 
+// //   console.log(" the arry befor delet:")
+// // for (let i = 0; i < stockdesdonner.length; i++) {
+// // console.log(`stockdesdonner[${i}].nome :` ,stockdesdonner[i].nome)
+// // console.log(`stockdesdonner[${i}].id :` ,stockdesdonner[i].id)
 
+// // }
 
+// // 
 
+// //  console.log(" the arry after delet:")
+// //  for (let i= stockdesdonner.length-1; i >=0 ; i--) {
+// // console.log(`stockdesdonner[${i}].nome :` ,stockdesdonner[i].nome)
+// // console.log(`stockdesdonner[${i}].id :` ,stockdesdonner[i].id)
 
-}
+// // }
+
+ }
 

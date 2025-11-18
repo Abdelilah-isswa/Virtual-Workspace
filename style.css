@@ -46,8 +46,15 @@ body {
 
 .zone-main {
     background-color: rgb(58, 134, 255);
-    height: 100%;
-    width: 1400px;
+    height: 90%;
+    width: 1900px;
+    background-image: url(img/plan.jpg) ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
 
 }
 
@@ -70,9 +77,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: scroll;
    
 }
+.son1,.son2,.son3,.son4,.son5,.son6{
 
+    background-color: blue;
+}
+.son1{
+    grid-column:3/4 ;
+    grid-row: 3/4;
+}
 /* forth */
 .btn-add-new-worker {
     height: 100px;
@@ -107,7 +122,8 @@ body {
 }
 label{
      margin-left: 10%;
-     background-color: red;
+    font-size: 1rem;
+    margin-bottom: 0px;
     
 }
 
