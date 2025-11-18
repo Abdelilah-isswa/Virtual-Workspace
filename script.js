@@ -8,6 +8,7 @@ let Nom;
 let idx = 0;
 let son1arry =[];
 let x=0;
+let y;
 ////////
 let son1 = document.querySelector(".son1")
 let son2 = document.querySelector(".son2")
@@ -15,6 +16,8 @@ let son3 = document.querySelector(".son3")
 let son4 = document.querySelector(".son4")
 let son5 = document.querySelector(".son5")
 /////////
+let partexperience;
+//////
 function btn_add_new_worker() {
 
     if (document.getElementsByClassName("father").length > 0) {
@@ -24,7 +27,7 @@ function btn_add_new_worker() {
         userinfopopup.className = "bigerfather"
         userinfopopup.innerHTML = `
     
-    <div class="father">
+                <div class="father">
 
         <label  for="">Nom</label>
         <input class="Nom" type="text" placeholder="entrer le nom">
@@ -44,13 +47,14 @@ function btn_add_new_worker() {
         <input  type="text" placeholder="jean.dupont@worksphere.com" id="email" required>
         <label class="" for="">Téléphone</label>
         <input class="form-input" type="tel" placeholder="01 23 45 67 89" id="phone" required>
+          <div class="partexperience">
+            
+        </div>
         <div class="btn-container">
-
+            <button class="experience" onclick="addexperience()">Add experience</button>
             <button class="cancel" onclick="exituserinfopopup()">cancel</button>
             <button class="submit" onclick="submituserinfopopup()">submit</button>
         </div>
-
-    </div>
     
     `
 
@@ -62,7 +66,7 @@ function btn_add_new_worker() {
         // telephone = document.querySelector("")
         // expériences = document.querySelector("")
     }
-
+ partexperience = document.querySelector(".partexperience")
 
 }
 function exituserinfopopup() {
@@ -355,4 +359,11 @@ function remouvefromroom(){
     //usersendtoworkpopup()
   
    
+}
+function addexperience(){
+     y = document.createElement("div")
+       
+        y.innerHTML = `<input class="" type="text">`
+       partexperience.append(y)
+
 }
