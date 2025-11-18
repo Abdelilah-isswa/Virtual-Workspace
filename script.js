@@ -1,11 +1,12 @@
 let userinfopopup;
+let usersendtowork;
 let stockdesdonner = [];
 
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
 let Nom;
 let idx =0;
-
+ 
 /////////
 function btn_add_new_worker() {
 
@@ -62,6 +63,13 @@ function exituserinfopopup() {
     userinfopopup.remove()
 
 }
+function usersendtoworkpopup() {
+
+    usersendtowork.remove()
+
+
+
+}
 function submituserinfopopup() {
     
 
@@ -69,7 +77,7 @@ function submituserinfopopup() {
     userinfopopup.remove()
     newworker = document.createElement("div")
     newworker.className = "newworker"
-    let employe
+   let employe
     if (idx> 0){
      employe = {
         id:idx ,
@@ -167,3 +175,41 @@ function submituserinfopopup() {
 
  }
 
+function add_worker_to_work_space(){
+      usersendtowork = document.createElement("div")
+        usersendtowork.className = "usersendtowork"
+        usersendtowork.innerHTML = `
+    
+                <button class="cancel" onclick="usersendtoworkpopup()">cancel</button>
+
+        
+    
+    `  
+    console.log(stockdesdonner) //arry
+    document.body.append(usersendtowork)
+        for (let i = 0; i < stockdesdonner.length; i++) {
+              newworker = document.createElement("div")
+    newworker.className = "newworker"
+        newworker.innerHTML = `   
+   <img  class="userimg" src="img/img1.webp" alt="">
+     <div class="workerinfo">
+       
+        <div class="name">${stockdesdonner[i].nome}</div>
+       <div class="role"></div>
+     </div>
+    
+    <div class="workerbtn">
+        <button class="editworker" onclick="btn_add_new_worker()">edit</button>
+        <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+   
+    </div>`
+            usersendtowork.append(newworker)
+        }
+    
+
+     
+        // for(let i =0;i<stockdesdonner.length;i++){
+        //     usersendtowork.append(newworker)
+        // }
+        
+}
