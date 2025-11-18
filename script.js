@@ -8,7 +8,7 @@ let Nom;
 let idx = 0;
 let son1arry =[];
 let x=0;
-let y;
+let experiencefild;
 ////////
 let son1 = document.querySelector(".son1")
 let son2 = document.querySelector(".son2")
@@ -47,9 +47,9 @@ function btn_add_new_worker() {
         <input  type="text" placeholder="jean.dupont@worksphere.com" id="email" required>
         <label class="" for="">Téléphone</label>
         <input class="form-input" type="tel" placeholder="01 23 45 67 89" id="phone" required>
-          <div class="partexperience">
-            
-        </div>
+       
+
+
         <div class="btn-container">
             <button class="experience" onclick="addexperience()">Add experience</button>
             <button class="cancel" onclick="exituserinfopopup()">cancel</button>
@@ -66,7 +66,7 @@ function btn_add_new_worker() {
         // telephone = document.querySelector("")
         // expériences = document.querySelector("")
     }
- partexperience = document.querySelector(".partexperience")
+ 
 
 }
 function exituserinfopopup() {
@@ -361,9 +361,12 @@ function remouvefromroom(){
    
 }
 function addexperience(){
-     y = document.createElement("div")
+  //  partexperience = document.querySelector(".partexperience")
+  let father =document.querySelector(".father")
+     experiencefild = document.createElement("div")
+        experiencefild.className="partexperience"
+        experiencefild.innerHTML = `<input class="" type="text">`
        
-        y.innerHTML = `<input class="" type="text">`
-       partexperience.append(y)
+      father.append(experiencefild)
 
 }
