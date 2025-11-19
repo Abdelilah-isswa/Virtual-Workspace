@@ -85,11 +85,13 @@ body {
 .Add-New-Worker {
     height: 80%;
     width: 90%;
-    background-color: rgb(255, 255, 255);
+    border: 2px solid white;
+    backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: auto;
+    border-radius: 10px;
    
 }
 .son1,.son2,.son3,.son4,.son5,.son6{
@@ -145,17 +147,17 @@ body {
     font-weight: 700;
     font-size: 2rem;
     cursor: pointer;
-    animation: btnanimation 5s infinite alternate;
+     /* animation: btnanimation 10s infinite alternate;  */
     
 }
 @keyframes btnanimation{
     0%{
-        background-color: black;
+        background: linear-gradient(rgb(153, 255, 0),black);
         color:rgb(153, 255, 0) ;
         border: rgb(153, 255, 0) solid 2px ;
     }
     100%{
-      background-color:  rgb(153, 255, 0);
+      background-color:  linear-gradient(black,rgb(153, 255, 0));
       color: black;
       
     }
@@ -164,6 +166,7 @@ body {
      background-color: black;
     border: white solid 5px;
     color: rgb(153, 255, 0);
+    box-shadow: 8px 8px 2px rgb(153, 255, 0);
     
 }
 
@@ -293,34 +296,40 @@ justify-content: space-between;
     width: 90%;
     margin: 10px;
     border-radius: 20px;
-    background-color: green;
-    border:  2px solid red;
+    background-color: black;
+    border:  5px solid rgb(153, 255, 0);
     
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    backdrop-filter: blur(12px);
 }
 .userimg{
     border-radius: 100px;
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
 }
 .workerinfo{
-background-color: yellow;
+color: white;
 width: 40%;
 height: 80px;
 
 }
 .deletworker , .editworker{
-    height: 30px;
+    
+    height: 35px;
     width: 100px;
        border-radius: 5px;
-       font-size: 1.2rem;
+       font-size: 1.4rem;
     font-weight: 400;
      border: none;
 }
 .workerbtn{
-background-color: green;
+background-color: rgb(255, 145, 0);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height:  80px;
     
 }
 .deletworker{
