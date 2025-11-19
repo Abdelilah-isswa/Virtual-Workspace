@@ -8,9 +8,15 @@ let newworker;
 let Nom, role, photo, email, telephone, expériences;
 let idx = 0;
 let son1arry = [];
+let son2arry = [];
+let son3arry = [];
+let son4arry = [];
+let son5arry = [];
+let son6arry = [];
 let x = 0;
 let experiencefild;
 let xz;
+
 ////////
 let son1 = document.querySelector(".son1")
 let son2 = document.querySelector(".son2")
@@ -269,10 +275,11 @@ console.log("sined",son1arry)
 
 
 
-
+let zz=0;
 function refrech_the_users_that_are_added_to_son(xy) {
-    x=0;
+    
     let curentson;
+  
     if (xy === 1) {
         curentson = son1
     } else if (xy === 2) {
@@ -287,9 +294,12 @@ function refrech_the_users_that_are_added_to_son(xy) {
         curentson = son6
     }
 
-console.log("curentson",curentson)
+//fix this probleme about affecting to multipla sones
+
+
+
 curentson.innerHTML=''
-    for (let i = 0; i < son1arry.length; i++) {
+    for (let i = zz; i < son1arry.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
@@ -302,12 +312,12 @@ curentson.innerHTML=''
            <button class="editworker" onclick="btn_add_new_worker()">edit</button>
           
         
-             <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son1arry[i].id})">x</button>
+             <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son1arry[i].id},${xy})">x</button>
        </div>`
         curentson.append(newworker)
     }
     x++
-
+   zz++
 
 
 
@@ -380,12 +390,10 @@ function addexperience() {
     expériences = document.querySelector("#experiences")
 
 }
-function removeworkerfromson(id) {
+function removeworkerfromson(id,xy) {
 
 
-console.log("unsined 1",stockdesdonner)
-console.log("sined 1",son1arry)
-console.log("id",id)
+
       let indextodeletinarry;
      for (let i = 0; i < son1arry.length; i++) {
         if (son1arry[i].id === id) {
@@ -395,12 +403,11 @@ console.log("id",id)
      console.log(indextodeletinarry)
   let x=  son1arry.splice(indextodeletinarry, 1)
     console.log("x",x)
-console.log("sined 2",son1arry)
-console.log("unsined 2",stockdesdonner)
+
     stockdesdonner.push(x[0])
 
  refrech_the_users_that_are_in_the_waiting_room(id)
- refrech_the_users_that_are_added_to_son(1)  ///fix thr xy it should
+ refrech_the_users_that_are_added_to_son(xy)  
     //   if(son1arry.length ===0){
     //     son1arry = x
     //   }else{
@@ -408,30 +415,8 @@ console.log("unsined 2",stockdesdonner)
     //   }
     //stockdesdonner.push(x[0])
    //son1.innerHTML = ''
-    
-       // usersendtoworkpopup();
-    
 
-    // for (let i = 0; i < son1arry.length; i++) {
-    //     newworker = document.createElement("div")
-    //     newworker.className = "newworker"
-    //     newworker.innerHTML = `   
-    //  <img  class="userimg" src="img/img1.webp" alt="">
-    //     <div class="workerinfo">
-    //         <div class="name">${son1arry[i].nome}</div>
-    //        <div class="role"></div>
-    //      </div>
-    //     <div class="workerbtn">
-    //         <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-    //         <button class="deletworker" onclick="deletuser(${son1arry[i].id})">delet</button>
-        
-    //           <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son1arry[i].id})">xx</button>
-    //     </div>`
-
-    //     son1.append(newworker)
-    // }
-    // x++
-    // usersendtoworkpopup();
+    usersendtoworkpopup();
     // reloadthenewworkerspace();
 
 }
@@ -459,18 +444,8 @@ function reloadthenewworkerspace() {
 
         Add_New_Worker_space.append(newworker)
     }
-    //         newworker.innerHTML = `   
-    //    <img  class="userimg" src="${employe.photo}" alt="">
-    //      <div class="workerinfo">
 
-    //         <div class="name">${employe.nome}</div>
-    //        <div class="role">${employe.role}</div>
-    //      </div>
-
-    //     <div class="workerbtn">
-    //         <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-    //         <button class="deletworker" onclick="deletuser(${employe.id})">delet</button>
-
-    //     </div>`
 
 }
+
+
