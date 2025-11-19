@@ -308,9 +308,9 @@ curentson=son6
         </div>
        <div class="workerbtn">
            <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-           <button class="deletworker" onclick="deletuser(${son1arry[i].id})">delet</button>
+          
         
-             <button class="append" onclick="removeworkerfromson(${son1arry[i].id})">x</button>
+             <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son1arry[i].id})">x</button>
        </div>`
           curentson.append(newworker)
        }
@@ -400,11 +400,20 @@ function addexperience(){
 
 }
 function removeworkerfromson(id){
-   
-    console.log("id for the son clicked",id)
-console.log("remouved")
-usersendtoworkpopup();
-console.log("son1arry",son1arry)
+//         if(xy ===1){
+//         curentson=son1
+//     }else if(xy ===2){
+//         curentson=son2
+//     }else if(xy ===3){
+// curentson=son3
+//     }else if(xy ===4){
+// curentson=son4
+//     }else if(xy ===5){
+// curentson=son5
+//     }else {
+// curentson=son6
+//     }
+ console.log("son1arry before delet",son1arry)
 let indextodeletinarry;
  for (let i = 0; i < son1arry.length; i++) {
           if (son1arry[i].id === id) {
@@ -413,7 +422,7 @@ let indextodeletinarry;
       }
         let x = son1arry.splice(indextodeletinarry, 1)
 
-      
+       console.log("son1arry after delet",son1arry)
 
       console.log(" arry after delet",x[0])
     //   if(son1arry.length ===0){
@@ -421,7 +430,7 @@ let indextodeletinarry;
     //   }else{
     //     son1arry.push(x[0])
     //   }
-
+            son1.innerHTML=''
 
               for (let i = 0; i < son1arry.length; i++) {
             newworker = document.createElement("div")
@@ -436,10 +445,15 @@ let indextodeletinarry;
             <button class="editworker" onclick="btn_add_new_worker()">edit</button>
             <button class="deletworker" onclick="deletuser(${son1arry[i].id})">delet</button>
         
-              <button class="append" onclick="removeworkerfromson(${son1arry[i].id})">x</button>
+              <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son1arry[i].id})">xx</button>
         </div>`
+        
           son1.append(newworker)
         }
         x++
-
+usersendtoworkpopup();
 }
+// function Reception{
+
+
+// }
