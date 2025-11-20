@@ -2,7 +2,7 @@ let userinfopopup;
 let usersendtowork;
 let stockdesdonner = [];
 let img;
-
+let curentarry;
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
 let Nom, role, photo, email, telephone, expériences;
@@ -28,10 +28,8 @@ let son6 = document.querySelector(".son6")
 let partexperience;
 //////
 function btn_add_new_worker() {
+console.log("add new worker")
 
-    // if (document.getElementsByClassName("father").length > 0) {
-
-    // } else {
     userinfopopup = document.createElement("div")
     userinfopopup.className = "bigerfather"
     userinfopopup.innerHTML = `
@@ -78,7 +76,7 @@ function btn_add_new_worker() {
     img = document.querySelector("#Photo")
     img.src = "img/img1.webp"
     // expériences = document.querySelector("")
-    // }
+ 
 
 
 }
@@ -94,8 +92,9 @@ function usersendtoworkpopup() {
 
 
 }
+//click on submit
 function submituserinfopopup() {
-
+console.log("submit")
 
     //if(Nom.value==="" || role.value=="" || photo.value=="" || telephone.value==""||email.value==""){
     //  alert("Enter The info")
@@ -166,7 +165,7 @@ function submituserinfopopup() {
     // }
 }
 function deletuser(id) {
-
+console.log("delet")
 
     Add_New_Worker_space.innerHTML = ''
     let indextodeletinarry;
@@ -199,7 +198,8 @@ function deletuser(id) {
 }
 
 function add_worker_to_work_space(xy) {
-
+    console.log("click on blue box")
+    
     usersendtowork = document.createElement("div")
     usersendtowork.className = "usersendtowork"
     usersendtowork.innerHTML = `
@@ -226,8 +226,8 @@ function add_worker_to_work_space(xy) {
      </div>
     
     <div class="workerbtn">
-        <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-        <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+        
+       
          <button class="append" onclick="appendtotheimge(${stockdesdonner[i].id},${xy})">append</button>
    
     </div>`
@@ -239,6 +239,19 @@ function add_worker_to_work_space(xy) {
 }
 //click on the append btn
 function appendtotheimge(id, xy) {
+       if (xy === 1) {
+        curentarry = son1arry
+    } else if (xy === 2) {
+        curentarry = son2arry
+    } else if (xy === 3) {
+        curentarry = son3arry
+    } else if (xy === 4) {
+        curentarry = son4arry
+    } else if (xy === 5) {
+        curentarry = son5arry
+    } else {
+        curentarry = son6arry
+    }
  
 console.log("append")
 
@@ -251,16 +264,10 @@ console.log("append")
     }
    
       let x = stockdesdonner.splice(indextodeletinarry, 1)
-     
-
-    if (son1arry.length === 0) {
-        son1arry = x
-    } else {
-        son1arry.push(x[0])
-    }
-console.log("unsined",stockdesdonner)
-console.log("sined",son1arry)
     
+
+    curentarry.push(x[0])
+
     
     //      //id is the id of the element that i click on
     usersendtoworkpopup()
@@ -268,16 +275,25 @@ console.log("sined",son1arry)
     refrech_the_users_that_are_added_to_son(xy);
     // refrech_the_users_that_are_added_to_son_in_case_append(xy)
     refrech_the_users_that_are_in_the_waiting_room(id)
+
+
+
+    console.log("stockdesdonner",stockdesdonner)
+    console.log("son1arry",son1arry)
+    console.log("son2arry",son2arry)
+
   
+     console.log("curentarry this",curentarry)
 
 
 }
 
 
 
-let zz=0;
+
 function refrech_the_users_that_are_added_to_son(xy) {
-    
+
+    console.log("refrech the users added to son")
     let curentson;
   
     if (xy === 1) {
@@ -299,82 +315,62 @@ function refrech_the_users_that_are_added_to_son(xy) {
 
 
 curentson.innerHTML=''
-    for (let i = zz; i < son1arry.length; i++) {
+    for (let i = 0; i < curentarry.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
      <img  class="userimg" src="img/img1.webp" alt="">
        <div class="workerinfo">
-           <div class="name">${son1arry[i].nome}</div>
+           <div class="name">${curentarry[i].nome}</div>
           <div class="role"></div>
         </div>
        <div class="workerbtn">
            <button class="editworker" onclick="btn_add_new_worker()">edit</button>
           
         
-             <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son1arry[i].id},${xy})">x</button>
+             <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${curentarry[i].id},${xy})">x</button>
        </div>`
         curentson.append(newworker)
     }
     x++
-   zz++
 
+   console.log("curentarry this",curentarry)
 
 
 }
 
 function refrech_the_users_that_are_in_the_waiting_room(id) {
+console.log("refrech the users on waiting room")
 
-    Add_New_Worker_space.innerHTML = ''
 
-    //<div  newworker
-    for (let i = 0; i < stockdesdonner.length; i++) {
+   Add_New_Worker_space.innerHTML = ''
+
+    // //<div  newworker
+     for (let i = 0; i < stockdesdonner.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
-        newworker.innerHTML = `   
-     <img  class="userimg" src="img/img1.webp" alt="">
-       <div class="workerinfo">
+       newworker.innerHTML = `   
+    <img  class="userimg" src="img/img1.webp" alt="">
+      <div class="workerinfo">
+   
+         <div class="name">${stockdesdonner[i].nome}</div>
+        <div class="role"></div>
+      </div>
+     <div class="workerbtn">
+         <button class="editworker" onclick="btn_add_new_worker()">edit</button>
+         <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
     
-          <div class="name">${stockdesdonner[i].nome}</div>
-         <div class="role"></div>
-       </div>
+     </div>`
 
-      <div class="workerbtn">
-          <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-          <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
-           <button class="append" onclick="appendtotheimge(${stockdesdonner[i].id})">append</button>
-
-      </div>`
-
-        Add_New_Worker_space.append(newworker)
-    }
-
+         Add_New_Worker_space.append(newworker)
+     }
 
 
 
 }
 
 
-function show_the_worker_after_appended_in_the_image(id, stockdesdonner) {
-    //arry stockdesdonner
 
-    let indextodeletinarry;
-    for (let i = 0; i < stockdesdonner.length; i++) {
-        if (stockdesdonner[i].id === id) {
-            indextodeletinarry = i;
-        }
-    }
-
-    newworker.innerHTML = `   
-      <img  class="userimg" src="img/img1.webp" alt="">
-        <div class="workerinfo">
-           <div class="name"></div>
-          <div class="role"></div>
-          <div class="remouvefromroom" onclick="remouvefromroom()">x</div>
-        </div>
-   `
-    son1.append(newworker)
-}
 
 
 function addexperience() {
@@ -390,34 +386,54 @@ function addexperience() {
     expériences = document.querySelector("#experiences")
 
 }
+
+
 function removeworkerfromson(id,xy) {
+       if (xy === 1) {
+        curentarry = son1arry
+    } else if (xy === 2) {
+        curentarry = son2arry
+    } else if (xy === 3) {
+        curentarry = son3arry
+    } else if (xy === 4) {
+        curentarry = son4arry
+    } else if (xy === 5) {
+        curentarry = son5arry
+    } else {
+        curentarry = son6arry
+    }
 
+console.log("click x")
+console.log("curentarry1",curentarry)
 
-
-      let indextodeletinarry;
-     for (let i = 0; i < son1arry.length; i++) {
-        if (son1arry[i].id === id) {
-             indextodeletinarry = i;
-         }
+console.log("stockdesdonner1",stockdesdonner)
+    console.log("son1arry1",son1arry)
+    console.log("son2arry1",son2arry)
+    //   let indextodeletinarry;
+     for (let i = 0; i < curentarry.length; i++) {
+  
+        if (curentarry[i].id === id) {
+    //     //      indextodeletinarry = i;
+    //     console.log("enterd")
+               let x=  curentarry.splice(i, 1)[0]
+            stockdesdonner.push(x)
+           
+          }
      }
-     console.log(indextodeletinarry)
-  let x=  son1arry.splice(indextodeletinarry, 1)
-    console.log("x",x)
+     
 
-    stockdesdonner.push(x[0])
 
  refrech_the_users_that_are_in_the_waiting_room(id)
  refrech_the_users_that_are_added_to_son(xy)  
-    //   if(son1arry.length ===0){
-    //     son1arry = x
-    //   }else{
-    //     son1arry.push(x[0])
-    //   }
-    //stockdesdonner.push(x[0])
-   //son1.innerHTML = ''
+
 
     usersendtoworkpopup();
-    // reloadthenewworkerspace();
+
+
+    console.log("stockdesdonner2",stockdesdonner)
+    console.log("son1arry2",son1arry)
+    console.log("son2arry2",son2arry)
+
 
 }
 
@@ -449,3 +465,35 @@ function reloadthenewworkerspace() {
 }
 
 
+function refreshAllSons() {
+    const sons = [
+        { element: son1, array: son1arry, number: 1 },
+        { element: son2, array: son2arry, number: 2 },
+        { element: son3, array: son3arry, number: 3 },
+        { element: son4, array: son4arry, number: 4 },
+        { element: son5, array: son5arry, number: 5 },
+        { element: son6, array: son6arry, number: 6 }
+    ];
+
+    sons.forEach(son => {
+        son.element.innerHTML = '';
+        
+        for (let i = 0; i < son.array.length; i++) {
+            let newworker = document.createElement("div");
+            newworker.className = "newworker";
+            newworker.innerHTML = `   
+                <img class="userimg" src="img/img1.webp" alt="">
+                <div class="workerinfo">
+                    <div class="name">${son.array[i].nome}</div>
+                    <div class="role"></div>
+                </div>
+                <div class="workerbtn">
+                    <button class="editworker" onclick="btn_add_new_worker()">edit</button>
+                    <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${son.array[i].id}, ${son.number})">x</button>
+                </div>`;
+            son.element.append(newworker);
+        }
+    });
+}
+
+refreshAllSons()
