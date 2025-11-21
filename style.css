@@ -96,9 +96,10 @@ body {
 }
 .son1,.son2,.son3,.son4,.son5,.son6{
 
-    background-color: rgba(0, 0, 255, 0.334);
+   
     border: solid black 2px;
     overflow: auto;
+    color: black;
    
     
 }
@@ -106,7 +107,7 @@ body {
     grid-column:1/10 ;
     grid-row: 4/10;
     
-    overflow: auto;
+    
   
     
 }

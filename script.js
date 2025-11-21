@@ -362,6 +362,52 @@ function refrech_the_users_that_are_added_to_son(xy) {
 
 
 curentson.innerHTML=''
+
+
+// for(let i =1 ;i<7;i++){
+//        if (i === 1) {
+//         curentson = son1
+//     } else if (i === 2) {
+//         curentson = son2
+//     } else if (i === 3) {
+//         curentson = son3
+//     } else if (i === 4) {
+//         curentson = son4
+//     } else if (i === 5) {
+//         curentson = son5
+//     } else {
+//         curentson = son6
+//     }
+//     curentson.innerHTML=''
+// let title = document.createElement("div")
+// title.innerText="Home"
+// curentson.append(title)
+
+//           if (i === 1) {
+//         title.innerText="Salle de conférence"
+// curentson.append(title)
+//     } else if (i === 2) {
+//           title.innerText="Réception"
+// curentson.append(title)
+//     } else if (i === 3) {
+        
+//          title.innerText="Salle des serveurs"
+// curentson.append(title)
+//     } else if (i === 4) {
+//          title.innerText="Salle de sécurité"
+// curentson.append(title)
+//     } else if (i === 5) {
+//          title.innerText="Salle du personnel"
+// curentson.append(title)
+//     } else {
+//          title.innerText="Salle d’archives"
+// curentson.append(title)
+//     }
+
+
+// }
+
+
     for (let i = 0; i < curentarry.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
