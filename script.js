@@ -306,7 +306,7 @@ function appendtotheimge(id, xy) {
     //    console.log("stockdesdonner",stockdesdonner)
     //     console.log("curentarry",curentarry)
     
-
+if(curentarry.length<3){
   if(x[0].role ==="manager"){
      if(curentarry===son1arry || curentarry===son2arry || curentarry===son3arry || curentarry===son4arry || curentarry===son5arry || curentarry===son6arry  ){
         
@@ -365,7 +365,10 @@ function appendtotheimge(id, xy) {
         console.log("curentarry1",curentarry)
 
 
-    
+}else{
+    stockdesdonner.push(x[0])
+    console.log("//////////////////full///////////////")
+}
 
     
     //      //id is the id of the element that i click on
