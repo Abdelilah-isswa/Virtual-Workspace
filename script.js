@@ -16,7 +16,7 @@ let son6arry = [];
 let x = 0;
 let experiencefild;
 let xz;
-
+let btn_container;
 ////////
 let son1 = document.querySelector(".son1")
 let son2 = document.querySelector(".son2")
@@ -76,7 +76,7 @@ console.log("add new worker")
     img = document.querySelector("#Photo")
     img.src = "img/img1.webp"
     // expériences = document.querySelector("")
- 
+ btn_container =document.querySelector(".btn-container")
 
 
 }
@@ -530,13 +530,18 @@ console.log("refrech the users on waiting room")
 function addexperience() {
     //  partexperience = document.querySelector(".partexperience")
     let father = document.querySelector(".father")
-    experiencefild = document.createElement("div")
-    experiencefild.className = "partexperience"
-    experiencefild.innerHTML = `
+    // experiencefild = document.createElement("div")
+    // experiencefild.className = "partexperience"
+    let experiencefild = `
         <label class="" for="experiences">experiences</label>
-        <input class="" id="experiences" type="text">`
+        <input class="" id="experiences" type="text">
+        <input type="date" id="start-time" name="meeting-time">
+        <input type="date" id="end-time" name="meeting-time">
+        <input class="role_input" id="experiences" type="text">
+        `
 
-    father.append(experiencefild)
+    // father.append(experiencefild)
+ btn_container.insertAdjacentHTML('beforebegin', experiencefild);
     expériences = document.querySelector("#experiences")
 
 }
