@@ -100,40 +100,50 @@ body {
     border: solid black 2px;
     overflow: auto;
     color: black;
+    height: 100px;
    
     
 }
-.son1{
-    grid-column:1/10 ;
-    grid-row: 4/10;
-    
-    
-  
-    
+
+.red{
+    background-color: red;
+    height: 100px;
 }
   .btn1{
         grid-column:1/2 ;
     grid-row: 4/5;
     background-color: rgb(72, 255, 0);
     }
+    .son1{
+    grid-column:1/10 ;
+    grid-row: 4/10;
+    
+    background-color: rgba(255, 0, 0, 0.504);
+  
+    
+}
 .son2{
     grid-column:15/21 ;
     grid-row: 4/10;
-    
+     background-color: rgba(255, 0, 0, 0.504);
 }
 .son3{
     grid-column:21/27 ;
     grid-row: 4/10;
+     background-color: rgba(255, 0, 0, 0.504);
 }
 .son4{
+    background-color: green;
     grid-column:1/11  ;
     grid-row: 10/22;
 }
 .son5{
     grid-column:15/21;
     grid-row: 16/22;
+     background-color: rgba(255, 0, 0, 0.504);
 }
 .son6{
+    background-color: green;
     grid-column:21/27  ;
     grid-row: 16/22;
 }

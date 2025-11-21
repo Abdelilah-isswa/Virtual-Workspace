@@ -237,8 +237,26 @@ function add_worker_to_work_space(xy) {
 
 
 }
+
+ function colorfun(xy){
+      if (xy === 1) {
+        son1.classList.add("red")
+    } else if (xy === 2) {
+        son2.classList.add("red")
+    } else if (xy === 3) {
+        son3.classList.add("red")
+    } else if (xy === 4) {
+        son4.classList.add("red")
+    } else if (xy === 5) {
+        son5.classList.add("red")
+    } else {
+       son6.classList.add("red")
+    }
+ }
+
 //click on the append btn
 function appendtotheimge(id, xy) {
+    console.log("append")
        if (xy === 1) {
         curentarry = son1arry
     } else if (xy === 2) {
@@ -253,7 +271,7 @@ function appendtotheimge(id, xy) {
         curentarry = son6arry
     }
  
-console.log("append")
+
 
     let indextodeletinarry;
     for (let i = 0; i < stockdesdonner.length; i++) {
@@ -264,27 +282,39 @@ console.log("append")
     }
    
       let x = stockdesdonner.splice(indextodeletinarry, 1)
-       console.log("stockdesdonner",stockdesdonner)
-        console.log("curentarry",curentarry)
+    //    console.log("stockdesdonner",stockdesdonner)
+    //     console.log("curentarry",curentarry)
     
-console.log("///////")
+
   if(x[0].role ==="manager"){
-     if(curentarry===son1arry){
+     if(curentarry===son1arry || curentarry===son2arry || curentarry===son3arry || curentarry===son4arry || curentarry===son5arry || curentarry===son6arry  ){
+        
         curentarry.push(x[0])
+        
      }else{
    stockdesdonner.push(x[0])
+
      }
 
   }else if(x[0].role ==="technician"){
+   
      if(curentarry===son2arry){
+        console.log("/1" ,xy)
         curentarry.push(x[0])
      }else{
+         console.log("/2" ,xy)
+         colorfun(xy)
+          //son1.classList.add("red")
         stockdesdonner.push(x[0])
+       
+       
+        //colorfun(curentarry).classList.add("red")
+       
 
      }
 
   }else if(x[0].role ==="receptionist"){
-       if(curentarry===son3arry){
+       if(curentarry===son5arry){
         curentarry.push(x[0])
      }else{
         stockdesdonner.push(x[0])
@@ -293,7 +323,7 @@ console.log("///////")
 
 
   }else if(x[0].role ==="security"){
-       if(curentarry===son4arry){
+       if(curentarry===son3arry){
         curentarry.push(x[0])
      }else{
         stockdesdonner.push(x[0])
@@ -301,7 +331,7 @@ console.log("///////")
      }
 
   }else if(x[0].role ==="cleaning"){
-       if(curentarry===son5arry){
+       if(curentarry===son5arry|| curentarry===son4arry ||curentarry===son6arry ||curentarry===son2arry ||curentarry===son3arry ){
         curentarry.push(x[0])
      }else{
         stockdesdonner.push(x[0])
@@ -342,7 +372,8 @@ function refrech_the_users_that_are_added_to_son(xy) {
 
     console.log("refrech the users added to son")
     let curentson;
-  
+
+
     if (xy === 1) {
         curentson = son1
     } else if (xy === 2) {
@@ -357,57 +388,62 @@ function refrech_the_users_that_are_added_to_son(xy) {
         curentson = son6
     }
 
-//fix this probleme about affecting to multipla sones
-
 
 
 curentson.innerHTML=''
 
-
-// for(let i =1 ;i<7;i++){
-//        if (i === 1) {
-//         curentson = son1
-//     } else if (i === 2) {
-//         curentson = son2
-//     } else if (i === 3) {
-//         curentson = son3
-//     } else if (i === 4) {
-//         curentson = son4
-//     } else if (i === 5) {
-//         curentson = son5
-//     } else {
-//         curentson = son6
-//     }
-//     curentson.innerHTML=''
-// let title = document.createElement("div")
-// title.innerText="Home"
-// curentson.append(title)
-
-//           if (i === 1) {
-//         title.innerText="Salle de conférence"
-// curentson.append(title)
-//     } else if (i === 2) {
-//           title.innerText="Réception"
-// curentson.append(title)
-//     } else if (i === 3) {
-        
-//          title.innerText="Salle des serveurs"
-// curentson.append(title)
-//     } else if (i === 4) {
-//          title.innerText="Salle de sécurité"
-// curentson.append(title)
-//     } else if (i === 5) {
-//          title.innerText="Salle du personnel"
-// curentson.append(title)
-//     } else {
-//          title.innerText="Salle d’archives"
-// curentson.append(title)
-//     }
-
-
+////working one
+//   for(let i =1 ;i<7;i++){
+//          if (i === 1) {
+//           curentson = son1
+//       } else if (i === 2) {
+//           curentson = son2
+//       } else if (i === 3) {
+//           curentson = son3
+//       } else if (i === 4) {
+//           curentson = son4
+//       } else if (i === 5) {
+//           curentson = son5
+//       } else {
+//           curentson = son6
+//       }
+//      // curentson.innerHTML=''
+//   let title = document.createElement("div")
+  
+//             if (i === 1) {
+                
+//           title.innerText="Salle de conférence"
+//   curentson.append(title)
+//   while (curentson.children.length > 1) {
+//     curentson.removeChild(curentson.lastChild);
 // }
+//       } else if (i === 2) {
+          
+//             title.innerText="Réception"
+//   curentson.append(title)
+//       } else if (i === 3) {
+            
+//            title.innerText="Salle des serveurs"
+//   curentson.append(title)
+//       } else if (i === 4) {
+       
+//            title.innerText="Salle de sécurité"
+//   curentson.append(title)
+//       } else if (i === 5) {
+           
+//            title.innerText="Salle du personnel"
+//   curentson.append(title)
+//       } else {
+        
+//            title.innerText="Salle d’archives"
+//   curentson.append(title)
+//       }
+//   }
+/////
+  
 
 
+/////
     for (let i = 0; i < curentarry.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
