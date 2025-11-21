@@ -238,20 +238,41 @@ function add_worker_to_work_space(xy) {
 
 }
 
- function colorfun(xy){
-      if (xy === 1) {
-        son1.classList.add("red")
-    } else if (xy === 2) {
-        son2.classList.add("red")
-    } else if (xy === 3) {
-        son3.classList.add("red")
-    } else if (xy === 4) {
-        son4.classList.add("red")
-    } else if (xy === 5) {
-        son5.classList.add("red")
-    } else {
-       son6.classList.add("red")
-    }
+ function colorfun(){
+    console.log("colorfun")
+      if (son1arry.length>0) {
+        son1.style.backgroundColor="green"}else{
+            
+            son1.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        }
+         if (son2arry.length>0) {
+          
+         son2.style.backgroundColor="green"}else{
+            
+            son2.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        }
+         if (son3arry.length>0) {
+         son3.style.backgroundColor="green"}else{
+            
+            son3.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        }
+         if (son4arry.length>0) {
+         son4.style.backgroundColor="green"}else{
+            
+            son4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        }
+           if (son5arry.length>0) {
+          son5.style.backgroundColor="green"}else{
+            
+            son5.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        }
+             if (son6arry.length>0) {
+          son6.style.backgroundColor="green"}else{
+            
+            son6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        }
+
+ 
  }
 
 //click on the append btn
@@ -301,9 +322,10 @@ function appendtotheimge(id, xy) {
      if(curentarry===son2arry){
         console.log("/1" ,xy)
         curentarry.push(x[0])
+        son2.classList.toggle("green")
      }else{
          console.log("/2" ,xy)
-         colorfun(xy)
+         
           //son1.classList.add("red")
         stockdesdonner.push(x[0])
        
@@ -353,7 +375,7 @@ function appendtotheimge(id, xy) {
     // refrech_the_users_that_are_added_to_son_in_case_append(xy)
     refrech_the_users_that_are_in_the_waiting_room(id)
 
-
+colorfun()
 
     // console.log("stockdesdonner",stockdesdonner)
     // console.log("son1arry",son1arry)
@@ -557,7 +579,7 @@ console.log("click x")
 
 
     usersendtoworkpopup();
-
+colorfun()
 
     // console.log("stockdesdonner2",stockdesdonner)
     // console.log("son1arry2",son1arry)
