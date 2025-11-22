@@ -27,6 +27,8 @@ let son6 = document.querySelector(".son6")
 /////////
 let partexperience;
 //////
+let sidebar =document.querySelector(".burger")
+//////
 function btn_add_new_worker() {
 console.log("add new worker")
 
@@ -656,3 +658,9 @@ function refreshAllSons() {
 }
 
 refreshAllSons()
+
+
+
+function sidebarlogique(){
+    console.log("click")
+}
