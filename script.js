@@ -27,7 +27,15 @@ let son6 = document.querySelector(".son6")
 /////////
 let partexperience;
 //////
-let sidebar =document.querySelector(".burger")
+let sidebar =document.querySelector(".side-bar")
+//////
+let fson1 = document.querySelector(".father-son1")
+let fson2 = document.querySelector(".father-son2")
+let fson3 = document.querySelector(".father-son3")
+let fson4 = document.querySelector(".father-son4")
+let fson5 = document.querySelector(".father-son5")
+let fson6 = document.querySelector(".father-son6")
+
 //////
 function btn_add_new_worker() {
 console.log("add new worker")
@@ -155,7 +163,7 @@ console.log("submit")
     
     <div class="workerbtn">
         
-        <button class="deletworker" onclick="deletuser(${employe.id})">delet</button>
+        <button class="deletworker" onclick="deletuser(${employe.id})">x</button>
    
     </div>`
 
@@ -190,7 +198,7 @@ console.log("delet")
        </div>
       <div class="workerbtn">
           
-          <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+          <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
       </div>`
         Add_New_Worker_space.append(newworker)
     }
@@ -243,35 +251,54 @@ function add_worker_to_work_space(xy) {
  function colorfun(){
     console.log("colorfun")
       if (son1arry.length>0) {
-        son1.style.backgroundColor="green"}else{
+        son1.style.backgroundColor="green"
+        fson1.style.backgroundColor="green"
+    }else{
             
             son1.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            fson1.style.backgroundColor="rgba(255, 0, 0, 0.504)"
         }
          if (son2arry.length>0) {
           
-         son2.style.backgroundColor="green"}else{
+         son2.style.backgroundColor="green"
+        fson2.style.backgroundColor="green"
+        }else{
             
             son2.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            fson2.style.backgroundColor="rgba(255, 0, 0, 0.504)"
         }
          if (son3arry.length>0) {
-         son3.style.backgroundColor="green"}else{
+         son3.style.backgroundColor="green"
+        fson3.style.backgroundColor="green"
+        }else{
             
             son3.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+             fson3.style.backgroundColor="rgba(255, 0, 0, 0.504)"
         }
          if (son4arry.length>0) {
-         son4.style.backgroundColor="green"}else{
+         son4.style.backgroundColor="green"
+        fson4.style.backgroundColor="green"
+        }else{
             
-            son4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            // son4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            // fson4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
         }
            if (son5arry.length>0) {
-          son5.style.backgroundColor="green"}else{
+          son5.style.backgroundColor="green"
+          fson5.style.backgroundColor="green"
+        }else{
             
             son5.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            fson5.style.backgroundColor="rgba(255, 0, 0, 0.504)"
         }
              if (son6arry.length>0) {
-          son6.style.backgroundColor="green"}else{
+          son6.style.backgroundColor="green"
+          fson6.style.backgroundColor="green"
+        
+        }else{
             
-            son6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            // son6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+            // fson6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
         }
 
  
@@ -514,7 +541,7 @@ console.log("refrech the users on waiting room")
       </div>
      <div class="workerbtn">
         
-         <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+         <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
     
      </div>`
 
@@ -614,7 +641,7 @@ function reloadthenewworkerspace() {
          </div>
         <div class="workerbtn">
             <button class="editworker" onclick="btn_add_new_worker()">edit</button>
-            <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">delet</button>
+            <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
         
               <button class="removeworkerfromworkspacebtn" onclick="removeworkerfromson(${stockdesdonner[i].id})">xx</button>
         </div>`
@@ -662,5 +689,13 @@ refreshAllSons()
 
 
 function sidebarlogique(){
-    console.log("click")
+    sidebar.classList.add("show_side_bar")
 }
+
+//  window.addEventListener("click",(x)=>{
+//      if(sidebar.style.display ==="block"){
+// sidebar.style.display="none"
+// console.log("d")
+// }
+//  })
+
