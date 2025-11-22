@@ -691,7 +691,9 @@ refreshAllSons()
 function sidebarlogique(){
     sidebar.classList.add("show_side_bar")
 }
-
+function sidebarlogiqueexit(){
+    sidebar.classList.remove("show_side_bar")
+}
 //  window.addEventListener("click",(x)=>{
 //      if(sidebar.style.display ==="block"){
 // sidebar.style.display="none"

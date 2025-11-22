@@ -757,6 +757,7 @@ input:valid:not(:focus):not(:placeholder-shown) {
         
     }
     .ex{
+        cursor: pointer;
         background-color: red;
         height: 40px;
         width: 40px;
@@ -877,6 +878,7 @@ input:valid:not(:focus):not(:placeholder-shown) {
         
     }
       .ex{
+        cursor: pointer;
         background-color: red;
         height: 40px;
         width: 40px;
