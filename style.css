@@ -11,6 +11,7 @@
 .father-son1,.father-son2,.father-son3,.father-son4,.father-son5,.father-son6{
     font-weight: 500;
     color: white;
+    overflow: auto;
 }
 
 
@@ -306,13 +307,13 @@ justify-content: space-between;
     height: 80px;
     width: 80px;
 }
-.workerinfo{
+/* .workerinfo{
 color: white;
 width: 40%;
 height: 80px;
 font-size: 1.5rem;
 
-}
+} */
 .append{
    
     height: 35px;
@@ -366,6 +367,7 @@ height:  80px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
     
 }
 .cancelsendingworker{
@@ -772,9 +774,26 @@ input:valid:not(:focus):not(:placeholder-shown) {
 /* Experience Section */
   
    @media (max-width:767px) {
+    .cancelsendingworker{
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    left: -5px;
+  
+
+}
     .burger{
+          color: white;
+    font-weight: 600;
+    border-radius: 10px;
             background-color: orange;
-    grid-column: 1/4;
+    grid-column: 1/10;
     grid-row: 3/5;
     display: flex;
     justify-content: center;
@@ -844,7 +863,20 @@ input:valid:not(:focus):not(:placeholder-shown) {
 }
 
    @media (min-width:768px) and (max-width:890px) {
+      .cancelsendingworker{
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    left: -5px;
   
+
+}
 .container{
     width: 100%;
     display: flex;
@@ -866,8 +898,11 @@ input:valid:not(:focus):not(:placeholder-shown) {
      background-color: rgba(255, 0, 0, 0.504);
 }
 .burger{
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
              background-color: orange;
-    grid-column: 1/4;
+    grid-column: 1/10;
     grid-row: 3/5;
     display: flex;
     justify-content: center;
@@ -1081,7 +1116,7 @@ justify-content: space-evenly;
     height: 50px;
     width: 50px;
 }
-   .workerinfo{
+   /* .workerinfo{
 color: white;
 width: 40%;
 height: 80px;
@@ -1092,7 +1127,7 @@ flex-direction: column;
 
 justify-content: space-evenly;
 
-}
+} */
  @media (min-width:1024px) and (max-width:1279px) {
 
   .burger{
