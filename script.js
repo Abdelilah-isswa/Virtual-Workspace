@@ -108,16 +108,20 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
-      
-             let experience={
+      if(countexp>0){
+
+            let experience={
          title:exptitle[countexp-1].value,
-         company:expcompany.value,
-         startdate:expstartdate.value,
-         enddate:expenddate.value
+         company:expcompany[countexp-1].value,
+         startdate:expstartdate[countexp-1].value,
+         enddate:expenddate[countexp-1].value
      }
      experiencesarry.push(experience)
      console.log("hi")
    
+
+      }
+ 
    
 
 
@@ -587,34 +591,40 @@ function addexperience() {
         <label class="" for="experiences">experiences :</label>
          <label class="" for="">Title :</label>
         <input class="Title"  type="text">
-         <label class="" for="Company">Company :</label>
-          <input class="role_input" id="Company" type="text">
-          <label class="" for="start-date">start-date :</label>
-        <input type="date" id="start-date" name="meeting-time">
-        <label class="" for="end-date">end-date :</label>
-        <input type="date" id="end-date" name="meeting-time">
+         <label class="" for="">Company :</label>
+          <input class="company"  type="text">
+          <label class="" for="">start-date :</label>
+        <input type="date" class="start-date" name="meeting-time">
+        <label class="" for="" >end-date :</label>
+        <input type="date" class="end-date" name="meeting-time">
        
         `
 
     // father.append(experiencefild)
  btn_container.insertAdjacentHTML('beforebegin', experiencefild);
    exptitle=document.querySelectorAll(".Title")
-   expcompany=document.querySelector("#Company")
-   expstartdate=document.querySelector("#start-date")
-   expenddate=document.querySelector("#end-date")
+   expcompany=document.querySelectorAll(".company")
+   expstartdate=document.querySelectorAll(".start-date")
+   expenddate=document.querySelectorAll(".end-date")
      exp = document.querySelector("#experiences")
-   
+     let year1 =""
+   for(let i=0;i<4;i++)
+    {
+            console.log(i)
+          // year1 =  year1+   
+   }
      
-
     if(countexp>0){
              let experience={
          title:exptitle[countexp-1].value,
-         company:expcompany.value,
-         startdate:expstartdate.value,
-         enddate:expenddate.value
+         company:expcompany[countexp-1].value,
+         startdate:expstartdate[countexp-1].value,
+         enddate:expenddate[countexp-1].value
      }
      experiencesarry.push(experience)
      console.log("hi")
+    // console.log("start  year1",  expstarexperiencetdate.value)
+
     }
     // if(exptitle.value !=="" && expcompany!=="" &&expstartdate!=="" &&expenddate!==""){
 
