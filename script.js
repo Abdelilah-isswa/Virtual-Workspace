@@ -120,8 +120,7 @@ function submituserinfopopup() {
         console.log("hi")
 
 
-    }
-
+    }  
 
 
 
@@ -723,7 +722,24 @@ function sidebarlogiqueexit() {
 function showuserinfo(id) {
     console.log("clicked")
 
- 
+    //      let experience = {
+    //         title: exptitle[countexp - 1].value,
+    //         company: expcompany[countexp - 1].value,
+    //         startdate: expstartdate[countexp - 1].value,
+    //         enddate: expenddate[countexp - 1].value
+    //     }
+    //     experiencesarry.push(experience)
+    //     console.log("hi")
+
+console.log("//",stockdesdonner[0].expériences)
+    // }   employe = {
+    //         id: idx,
+    //         nome: Nom.value,
+    //         role: role.value,
+    //         photo: photo.value,
+    //         email: email.value,
+    //         telephone: telephone.value,
+    //         expériences: experiencesarry,
 
 
 
@@ -748,7 +764,7 @@ function showuserinfo(id) {
        <div class="role">${stockdesdonner[i].role}</div>
        <div class="role">Email : ${stockdesdonner[i].email}</div>
        <div class="role">Phone : ${stockdesdonner[i].telephone}</div>
-       <div class="role">${stockdesdonner[i].expériences}</div>
+      
       
      </div>
     
@@ -757,14 +773,31 @@ function showuserinfo(id) {
     </div>
     
     `
+      
+
+
+    for (let index = 0; index < stockdesdonner[i].expériences.length; index++) {
+
+
+        
+          console.log("exp name", stockdesdonner[i].expériences[index].title) 
+        console.log("i",i)
+       //  userinfopopup.innerHTM=`  <div class="name"> ${stockdesdonner[index].telephone}</div>
+    // `
+   }
+
+
+
+
+
+
         }
     }
 
-    console.log("id", id)
+ console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
 
     document.body.append(userinfopopup)
-
-
+    
 
 
 }
