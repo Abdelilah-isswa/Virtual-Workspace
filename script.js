@@ -6,8 +6,8 @@ let curentarry;
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
 let Nom, role, photo, email, telephone;
-let exptitle,expcompany,expstartdate,expenddate;
-let experiencesarry =[];
+let exptitle, expcompany, expstartdate, expenddate;
+let experiencesarry = [];
 let idx = 0;
 let son1arry = [];
 let son2arry = [];
@@ -30,7 +30,7 @@ let son6 = document.querySelector(".son6")
 /////////
 let partexperience;
 //////
-let sidebar =document.querySelector(".side-bar")
+let sidebar = document.querySelector(".side-bar")
 //////
 let fson1 = document.querySelector(".father-son1")
 let fson2 = document.querySelector(".father-son2")
@@ -41,7 +41,7 @@ let fson6 = document.querySelector(".father-son6")
 
 //////
 function btn_add_new_worker() {
-console.log("add new worker")
+    console.log("add new worker")
 
     userinfopopup = document.createElement("div")
     userinfopopup.className = "bigerfather"
@@ -79,7 +79,7 @@ console.log("add new worker")
     </div>
     
     `
-    btnexperience=document.querySelector(".experience")
+    btnexperience = document.querySelector(".experience")
 
     document.body.append(userinfopopup)
     Nom = document.querySelector(".Nom")
@@ -90,7 +90,7 @@ console.log("add new worker")
     img = document.querySelector("#Photo")
     img.src = "img/img1.webp"
     // expériences = document.querySelector("")
- btn_container =document.querySelector(".btn-container")
+    btn_container = document.querySelector(".btn-container")
 
 
 }
@@ -108,26 +108,26 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
-      if(countexp>0){
+    if (countexp > 0) {
 
-            let experience={
-         title:exptitle[countexp-1].value,
-         company:expcompany[countexp-1].value,
-         startdate:expstartdate[countexp-1].value,
-         enddate:expenddate[countexp-1].value
-     }
-     experiencesarry.push(experience)
-     console.log("hi")
-   
-
-      }
- 
-   
+        let experience = {
+            title: exptitle[countexp - 1].value,
+            company: expcompany[countexp - 1].value,
+            startdate: expstartdate[countexp - 1].value,
+            enddate: expenddate[countexp - 1].value
+        }
+        experiencesarry.push(experience)
+        console.log("hi")
 
 
-     console.log("experiencesarry1",experiencesarry)
-          console.log("countexp",countexp)
-console.log("submit")
+    }
+
+
+
+
+    console.log("experiencesarry1", experiencesarry)
+    console.log("countexp", countexp)
+    console.log("submit")
 
     //if(Nom.value==="" || role.value=="" || photo.value=="" || telephone.value==""||email.value==""){
     //  alert("Enter The info")
@@ -147,7 +147,7 @@ console.log("submit")
             email: email.value,
             telephone: telephone.value,
             expériences: experiencesarry,
-            position: ""
+           
         }
     } else {
         employe = {
@@ -158,7 +158,7 @@ console.log("submit")
             email: email.value,
             telephone: telephone.value,
             expériences: experiencesarry,
-            position: ""
+           
         }
     }
 
@@ -171,15 +171,15 @@ console.log("submit")
 
 
     idx++;
-    countexp=0;
-    experiencesarry=[]
+    countexp = 0;
+    experiencesarry = []
     //<div  newworker
 
-console.log("stockdesdonner",stockdesdonner)
+    console.log("stockdesdonner", stockdesdonner)
 
 
     newworker.innerHTML = `   
-   <img  class="userimg" src="${employe.photo}" alt="">
+   <img  class="userimg" src="${employe.photo}" alt="" onclick="showuserinfo(${employe.id})">
      <div class="workerinfo">
        
         <div class="name">${employe.nome}</div>
@@ -196,11 +196,11 @@ console.log("stockdesdonner",stockdesdonner)
 
 
     Add_New_Worker_space.append(newworker)
-    
+
     // }
 }
 function deletuser(id) {
-console.log("delet")
+    console.log("delet")
 
     Add_New_Worker_space.innerHTML = ''
     let indextodeletinarry;
@@ -234,7 +234,7 @@ console.log("delet")
 
 function add_worker_to_work_space(xy) {
     console.log("click on blue box")
-    
+
     usersendtowork = document.createElement("div")
     usersendtowork.className = "usersendtowork"
     usersendtowork.innerHTML = `
@@ -273,67 +273,67 @@ function add_worker_to_work_space(xy) {
 
 }
 
- function colorfun(){
+function colorfun() {
     console.log("colorfun")
-      if (son1arry.length>0) {
-        son1.style.backgroundColor="green"
-        fson1.style.backgroundColor="green"
-    }else{
-            
-            son1.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-            fson1.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-        }
-         if (son2arry.length>0) {
-          
-         son2.style.backgroundColor="green"
-        fson2.style.backgroundColor="green"
-        }else{
-            
-            son2.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-            fson2.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-        }
-         if (son3arry.length>0) {
-         son3.style.backgroundColor="green"
-        fson3.style.backgroundColor="green"
-        }else{
-            
-            son3.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-             fson3.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-        }
-         if (son4arry.length>0) {
-         son4.style.backgroundColor="green"
-        fson4.style.backgroundColor="green"
-        }else{
-            
-            // son4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-            // fson4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-        }
-           if (son5arry.length>0) {
-          son5.style.backgroundColor="green"
-          fson5.style.backgroundColor="green"
-        }else{
-            
-            son5.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-            fson5.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-        }
-             if (son6arry.length>0) {
-          son6.style.backgroundColor="green"
-          fson6.style.backgroundColor="green"
-        
-        }else{
-            
-            // son6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-            // fson6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
-        }
+    if (son1arry.length > 0) {
+        son1.style.backgroundColor = "green"
+        fson1.style.backgroundColor = "green"
+    } else {
 
- 
- }
+        son1.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+        fson1.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+    }
+    if (son2arry.length > 0) {
+
+        son2.style.backgroundColor = "green"
+        fson2.style.backgroundColor = "green"
+    } else {
+
+        son2.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+        fson2.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+    }
+    if (son3arry.length > 0) {
+        son3.style.backgroundColor = "green"
+        fson3.style.backgroundColor = "green"
+    } else {
+
+        son3.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+        fson3.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+    }
+    if (son4arry.length > 0) {
+        son4.style.backgroundColor = "green"
+        fson4.style.backgroundColor = "green"
+    } else {
+
+        // son4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        // fson4.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+    }
+    if (son5arry.length > 0) {
+        son5.style.backgroundColor = "green"
+        fson5.style.backgroundColor = "green"
+    } else {
+
+        son5.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+        fson5.style.backgroundColor = "rgba(255, 0, 0, 0.504)"
+    }
+    if (son6arry.length > 0) {
+        son6.style.backgroundColor = "green"
+        fson6.style.backgroundColor = "green"
+
+    } else {
+
+        // son6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+        // fson6.style.backgroundColor="rgba(255, 0, 0, 0.504)"
+    }
+
+
+}
 
 //click on the append btn
 function appendtotheimge(id, xy) {
 
     console.log("append")
-       if (xy === 1) {
+    if (xy === 1) {
         curentarry = son1arry
     } else if (xy === 2) {
         curentarry = son2arry
@@ -346,7 +346,7 @@ function appendtotheimge(id, xy) {
     } else {
         curentarry = son6arry
     }
- 
+
 
 
     let indextodeletinarry;
@@ -356,90 +356,90 @@ function appendtotheimge(id, xy) {
             break
         }
     }
-   
-      let x = stockdesdonner.splice(indextodeletinarry, 1)
+
+    let x = stockdesdonner.splice(indextodeletinarry, 1)
     //    console.log("stockdesdonner",stockdesdonner)
     //     console.log("curentarry",curentarry)
-    
-if(curentarry.length<3){
-  if(x[0].role ==="manager"){
-     if(curentarry===son1arry || curentarry===son2arry || curentarry===son3arry || curentarry===son4arry || curentarry===son5arry || curentarry===son6arry  ){
-        
-        curentarry.push(x[0])
-        
-     }else{
-   stockdesdonner.push(x[0])
 
-     }
+    if (curentarry.length < 3) {
+        if (x[0].role === "manager") {
+            if (curentarry === son1arry || curentarry === son2arry || curentarry === son3arry || curentarry === son4arry || curentarry === son5arry || curentarry === son6arry) {
 
-  }else if(x[0].role ==="technician"){
-   
-     if(curentarry===son2arry){
-        console.log("/1" ,xy)
-        curentarry.push(x[0])
-        son2.classList.toggle("green")
-     }else{
-         console.log("/2" ,xy)
-         
-          //son1.classList.add("red")
+                curentarry.push(x[0])
+
+            } else {
+                stockdesdonner.push(x[0])
+
+            }
+
+        } else if (x[0].role === "technician") {
+
+            if (curentarry === son2arry) {
+                console.log("/1", xy)
+                curentarry.push(x[0])
+                son2.classList.toggle("green")
+            } else {
+                console.log("/2", xy)
+
+                //son1.classList.add("red")
+                stockdesdonner.push(x[0])
+
+
+                //colorfun(curentarry).classList.add("red")
+
+
+            }
+
+        } else if (x[0].role === "receptionist") {
+            if (curentarry === son5arry) {
+                curentarry.push(x[0])
+            } else {
+                stockdesdonner.push(x[0])
+
+            }
+
+
+        } else if (x[0].role === "security") {
+            if (curentarry === son3arry) {
+                curentarry.push(x[0])
+            } else {
+                stockdesdonner.push(x[0])
+
+            }
+
+        } else if (x[0].role === "cleaning") {
+            if (curentarry === son5arry || curentarry === son4arry || curentarry === son6arry || curentarry === son2arry || curentarry === son3arry) {
+                curentarry.push(x[0])
+            } else {
+                stockdesdonner.push(x[0])
+
+            }
+        }
+
+        console.log("stockdesdonner1", stockdesdonner)
+        console.log("curentarry1", curentarry)
+
+
+    } else {
         stockdesdonner.push(x[0])
-       
-       
-        //colorfun(curentarry).classList.add("red")
-       
-
-     }
-
-  }else if(x[0].role ==="receptionist"){
-       if(curentarry===son5arry){
-        curentarry.push(x[0])
-     }else{
-        stockdesdonner.push(x[0])
-
-     }
+        console.log("//////////////////full///////////////")
+    }
 
 
-  }else if(x[0].role ==="security"){
-       if(curentarry===son3arry){
-        curentarry.push(x[0])
-     }else{
-        stockdesdonner.push(x[0])
-
-     }
-
-  }else if(x[0].role ==="cleaning"){
-       if(curentarry===son5arry|| curentarry===son4arry ||curentarry===son6arry ||curentarry===son2arry ||curentarry===son3arry ){
-        curentarry.push(x[0])
-     }else{
-        stockdesdonner.push(x[0])
-
-     }
-  }
-  
-      console.log("stockdesdonner1",stockdesdonner)
-        console.log("curentarry1",curentarry)
-
-
-}else{
-    stockdesdonner.push(x[0])
-    console.log("//////////////////full///////////////")
-}
-
-    
     //      //id is the id of the element that i click on
     usersendtoworkpopup()
-   
+
     refrech_the_users_that_are_added_to_son(xy);
     // refrech_the_users_that_are_added_to_son_in_case_append(xy)
     refrech_the_users_that_are_in_the_waiting_room(id)
 
-colorfun()
+    colorfun()
 
     // console.log("stockdesdonner",stockdesdonner)
     // console.log("son1arry",son1arry)
     // console.log("son2arry",son2arry)
 
-  
+
     //  console.log("curentarry this",curentarry)
 
 
@@ -470,60 +470,12 @@ function refrech_the_users_that_are_added_to_son(xy) {
 
 
 
-curentson.innerHTML=''
-
-////working one
-//   for(let i =1 ;i<7;i++){
-//          if (i === 1) {
-//           curentson = son1
-//       } else if (i === 2) {
-//           curentson = son2
-//       } else if (i === 3) {
-//           curentson = son3
-//       } else if (i === 4) {
-//           curentson = son4
-//       } else if (i === 5) {
-//           curentson = son5
-//       } else {
-//           curentson = son6
-//       }
-//      // curentson.innerHTML=''
-//   let title = document.createElement("div")
-  
-//             if (i === 1) {
-                
-//           title.innerText="Salle de conférence"
-//   curentson.append(title)
-//   while (curentson.children.length > 1) {
-//     curentson.removeChild(curentson.lastChild);
-// }
-//       } else if (i === 2) {
-          
-//             title.innerText="Réception"
-//   curentson.append(title)
-//       } else if (i === 3) {
-            
-//            title.innerText="Salle des serveurs"
-//   curentson.append(title)
-//       } else if (i === 4) {
-       
-//            title.innerText="Salle de sécurité"
-//   curentson.append(title)
-//       } else if (i === 5) {
-           
-//            title.innerText="Salle du personnel"
-//   curentson.append(title)
-//       } else {
-        
-//            title.innerText="Salle d’archives"
-//   curentson.append(title)
-//       }
-//   }
-/////
-  
+    curentson.innerHTML = ''
 
 
-/////
+
+
+    /////
     for (let i = 0; i < curentarry.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
@@ -543,22 +495,22 @@ curentson.innerHTML=''
     }
     x++
 
-//    console.log("curentarry this",curentarry)
+    //    console.log("curentarry this",curentarry)
 
 
 }
 
 function refrech_the_users_that_are_in_the_waiting_room(id) {
-console.log("refrech the users on waiting room")
+    console.log("refrech the users on waiting room")
 
 
-   Add_New_Worker_space.innerHTML = ''
+    Add_New_Worker_space.innerHTML = ''
 
     // //<div  newworker
-     for (let i = 0; i < stockdesdonner.length; i++) {
+    for (let i = 0; i < stockdesdonner.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
-       newworker.innerHTML = `   
+        newworker.innerHTML = `   
     <img  class="userimg" src="img/img1.webp" alt="">
       <div class="workerinfo">
    
@@ -571,8 +523,8 @@ console.log("refrech the users on waiting room")
     
      </div>`
 
-         Add_New_Worker_space.append(newworker)
-     }
+        Add_New_Worker_space.append(newworker)
+    }
 
 
 
@@ -580,7 +532,7 @@ console.log("refrech the users on waiting room")
 
 
 
-let countexp =0;
+let countexp = 0;
 
 function addexperience() {
     //  partexperience = document.querySelector(".partexperience")
@@ -601,29 +553,34 @@ function addexperience() {
         `
 
     // father.append(experiencefild)
- btn_container.insertAdjacentHTML('beforebegin', experiencefild);
-   exptitle=document.querySelectorAll(".Title")
-   expcompany=document.querySelectorAll(".company")
-   expstartdate=document.querySelectorAll(".start-date")
-   expenddate=document.querySelectorAll(".end-date")
-     exp = document.querySelector("#experiences")
-     let year1 =""
-   for(let i=0;i<4;i++)
-    {
-            console.log(i)
-          // year1 =  year1+   
-   }
-     
-    if(countexp>0){
-             let experience={
-         title:exptitle[countexp-1].value,
-         company:expcompany[countexp-1].value,
-         startdate:expstartdate[countexp-1].value,
-         enddate:expenddate[countexp-1].value
-     }
-     experiencesarry.push(experience)
-     console.log("hi")
-    // console.log("start  year1",  expstarexperiencetdate.value)
+    btn_container.insertAdjacentHTML('beforebegin', experiencefild);
+    exptitle = document.querySelectorAll(".Title")
+    expcompany = document.querySelectorAll(".company")
+    expstartdate = document.querySelectorAll(".start-date")
+    expenddate = document.querySelectorAll(".end-date")
+    exp = document.querySelector("#experiences")
+    let year1 = ""
+    for (let i = 0; i < 4; i++) {
+        console.log(i)
+        // year1 =  year1+   
+    }
+
+    if (countexp > 0) {
+        let experience = {
+            title: exptitle[countexp - 1].value,
+            company: expcompany[countexp - 1].value,
+            startdate: expstartdate[countexp - 1].value,
+            enddate: expenddate[countexp - 1].value
+        }
+
+        let d1 = new Date(expenddate[countexp - 1].value)
+        let d2 = new Date(expstartdate[countexp - 1].value)
+
+        console.log("expstartdatesssssss", (d1 - d2) / (1000 * 60 * 60 * 24))
+        experiencesarry.push(experience)
+
+
+        // console.log("start  year1",  expstarexperiencetdate.value)
 
     }
     // if(exptitle.value !=="" && expcompany!=="" &&expstartdate!=="" &&expenddate!==""){
@@ -631,15 +588,15 @@ function addexperience() {
     // }
 
 
-     console.log("experiencesarry1",experiencesarry)
-          console.log("countexp",countexp)
+    console.log("experiencesarry1", experiencesarry)
 
-countexp++
+
+    countexp++
 }
 
 
-function removeworkerfromson(id,xy) {
-       if (xy === 1) {
+function removeworkerfromson(id, xy) {
+    if (xy === 1) {
         curentarry = son1arry
     } else if (xy === 2) {
         curentarry = son2arry
@@ -653,32 +610,32 @@ function removeworkerfromson(id,xy) {
         curentarry = son6arry
     }
 
-console.log("click x")
-// console.log("curentarry1",curentarry)
+    console.log("click x")
+    // console.log("curentarry1",curentarry)
 
-// console.log("stockdesdonner1",stockdesdonner)
-//     console.log("son1arry1",son1arry)
-//     console.log("son2arry1",son2arry)
+    // console.log("stockdesdonner1",stockdesdonner)
+    //     console.log("son1arry1",son1arry)
+    //     console.log("son2arry1",son2arry)
     //   let indextodeletinarry;
-     for (let i = 0; i < curentarry.length; i++) {
-  
+    for (let i = 0; i < curentarry.length; i++) {
+
         if (curentarry[i].id === id) {
-    //     //      indextodeletinarry = i;
-    //     console.log("enterd")
-               let x=  curentarry.splice(i, 1)[0]
+            //     //      indextodeletinarry = i;
+            //     console.log("enterd")
+            let x = curentarry.splice(i, 1)[0]
             stockdesdonner.push(x)
-           
-          }
-     }
-     
+
+        }
+    }
 
 
- refrech_the_users_that_are_in_the_waiting_room(id)
- refrech_the_users_that_are_added_to_son(xy)  
+
+    refrech_the_users_that_are_in_the_waiting_room(id)
+    refrech_the_users_that_are_added_to_son(xy)
 
 
     usersendtoworkpopup();
-colorfun()
+    colorfun()
 
     // console.log("stockdesdonner2",stockdesdonner)
     // console.log("son1arry2",son1arry)
@@ -727,7 +684,7 @@ function refreshAllSons() {
 
     sons.forEach(son => {
         son.element.innerHTML = '';
-        
+
         for (let i = 0; i < son.array.length; i++) {
             let newworker = document.createElement("div");
             newworker.className = "newworker";
@@ -750,10 +707,10 @@ refreshAllSons()
 
 
 
-function sidebarlogique(){
+function sidebarlogique() {
     sidebar.classList.add("show_side_bar")
 }
-function sidebarlogiqueexit(){
+function sidebarlogiqueexit() {
     sidebar.classList.remove("show_side_bar")
 }
 //  window.addEventListener("click",(x)=>{
@@ -763,3 +720,51 @@ function sidebarlogiqueexit(){
 // }
 //  })
 
+function showuserinfo(id) {
+    console.log("clicked")
+
+ 
+
+
+
+
+    for (let i = 0; i < stockdesdonner.length; i++) {
+
+        if (stockdesdonner[i].id === id) {
+            userinfopopup = document.createElement("div")
+            userinfopopup.className = "bigerfather"
+            userinfopopup.innerHTML = `
+    
+        <div class="showuserinfopopup">
+                <div class="imgandexit">
+                  <img  class="userimginfopopup" src="${stockdesdonner[i].photo}" alt="" ">
+               <button class="rovetheuserinfopopup" onclick="exituserinfopopup()">x</button>
+                </div>
+
+             
+     <div class="workerinfopopup">
+       
+        <div class="name">${stockdesdonner[i].nome}</div>
+       <div class="role">${stockdesdonner[i].role}</div>
+       <div class="role">Email : ${stockdesdonner[i].email}</div>
+       <div class="role">Phone : ${stockdesdonner[i].telephone}</div>
+       <div class="role">${stockdesdonner[i].expériences}</div>
+      
+     </div>
+    
+            
+        
+    </div>
+    
+    `
+        }
+    }
+
+    console.log("id", id)
+
+    document.body.append(userinfopopup)
+
+
+
+
+}
