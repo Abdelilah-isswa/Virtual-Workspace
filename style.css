@@ -195,19 +195,21 @@ overflow-y: scroll;
 }
 label{
      margin-left: 10%;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
     margin-bottom: 0px;
-    
+   
 }
 
-input[type="text"] ,input[type="tel"]{
+input {
     border: none;
-    height: 30px;
+    height: 60px;
     border: 2px solid #d1d3d4;
     letter-spacing: 0.5px;
     font-weight: 400;
-    width: 80%;
+    width: 100%;
      margin-left: 10%;
+   padding-left: 20px;
 }
 
 input[type="text"]:focus {
@@ -256,17 +258,18 @@ option{
     border: 2px solid #d1d3d4;
     width: 40%;
 }
-.btn-container{
-    
+/* .btn-container{
+    background-color: navy;
     width: 80%;
     display: flex;
 justify-content: space-between; 
+align-items: center;
  
  
  position: fixed;
  bottom: 0px;
  z-index: 1;
-}
+} */
 .bigerfather{
     height: 100%;
       position: absolute;
@@ -371,7 +374,7 @@ height:  80px;
     
 }
 .cancelsendingworker{
-    height: 40px;
+    height: 100px;
     width: 40px;
     background-color: red;
     border: none;
@@ -540,7 +543,7 @@ select:focus {
     cursor: pointer;
 } */
 
-input[type="file"]::file-selector-button {
+/* input[type="file"]::file-selector-button {
     background: #99ff00;
     border: none;
     padding: 8px 16px;
@@ -550,7 +553,7 @@ input[type="file"]::file-selector-button {
     color: #000;
     cursor: pointer;
     transition: all 0.3s ease;
-}
+} */
 
 /* input[type="file"]::file-selector-button:hover {
     background: #88ee00;
@@ -577,12 +580,15 @@ select option {
 /* Button Container */
 .btn-container {
     width: 100%;
+    height: 70px;
+    gap: 15px;
+    /* margin-top: auto; */
+    /* padding-top: 20px; */
+    position: relative;
+   
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    margin-top: auto;
-    padding-top: 20px;
-    position: relative;
+    align-items: center;
 }
 
 /* Buttons */
@@ -1310,7 +1316,7 @@ justify-content: space-evenly;
     width: 100%;
 }
 .zone-main{
-    background-color: rgb(0, 157, 255);
+   
    max-width:1000px;
    min-width:900px;
     .father-son1{

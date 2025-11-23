@@ -5,7 +5,9 @@ let img;
 let curentarry;
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
 let newworker;
-let Nom, role, photo, email, telephone, expériences;
+let Nom, role, photo, email, telephone;
+let exptitle,expcompany,expstartdate,expenddate;
+let experiencesarry =[];
 let idx = 0;
 let son1arry = [];
 let son2arry = [];
@@ -17,6 +19,7 @@ let x = 0;
 let experiencefild;
 let xz;
 let btn_container;
+let btnexperience;
 ////////
 let son1 = document.querySelector(".son1")
 let son2 = document.querySelector(".son2")
@@ -46,9 +49,9 @@ console.log("add new worker")
     
         <div class="father">
 
-        <label  for="Nom">Nom</label>
+        <label  for="Nom">Nom :</label>
         <input class="Nom" type="text" placeholder="entrer le nom" required id="Nom">
-        <label class="" for="role">Role</label>
+        <label class="" for="role">Role :</label>
         <select class="form-input" id="role" required>
             <option value="">Sélectionnez un rôle</option>
             <option value="manager">Manager</option>
@@ -57,18 +60,18 @@ console.log("add new worker")
             <option value="security">Agent de sécurité</option>
             <option value="cleaning">Nettoyage</option>
         </select>
-        <label class="" for="Photo" >Photo</label>
-        <input class="Photo" type="file" accept="image/*" id="Photo" required>
-        <label class="" for="email">Email</label>
+        <label class="" for="Photo" >Photo :</label>
+        <input class="Photo" type="text"  id="Photo" required>
+        <label class="" for="email">Email :</label>
         
         <input  type="text" placeholder="jean.dupont@worksphere.com" id="email" required>
-        <label class="" for="phone">Téléphone</label>
+        <label class="" for="phone">Téléphone :</label>
         <input class="" type="tel" placeholder="01 23 45 67 89" id="phone" required >
        
 
 
         <div class="btn-container">
-            <button class="experience" onclick="addexperience()">Add experience</button>
+            <button class="experience" onclick="addexperience()">Experience</button>
             <button class="cancel" onclick="exituserinfopopup()">cancel</button>
             <button class="submit" onclick="submituserinfopopup()">submit</button>
         </div>
@@ -76,6 +79,7 @@ console.log("add new worker")
     </div>
     
     `
+    btnexperience=document.querySelector(".experience")
 
     document.body.append(userinfopopup)
     Nom = document.querySelector(".Nom")
@@ -104,6 +108,21 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
+      
+             let experience={
+         title:exptitle[countexp-1].value,
+         company:expcompany.value,
+         startdate:expstartdate.value,
+         enddate:expenddate.value
+     }
+     experiencesarry.push(experience)
+     console.log("hi")
+   
+   
+
+
+     console.log("experiencesarry1",experiencesarry)
+          console.log("countexp",countexp)
 console.log("submit")
 
     //if(Nom.value==="" || role.value=="" || photo.value=="" || telephone.value==""||email.value==""){
@@ -123,7 +142,7 @@ console.log("submit")
             photo: photo.value,
             email: email.value,
             telephone: telephone.value,
-            expériences: "",
+            expériences: experiencesarry,
             position: ""
         }
     } else {
@@ -134,7 +153,7 @@ console.log("submit")
             photo: photo.value,
             email: email.value,
             telephone: telephone.value,
-            expériences: "",
+            expériences: experiencesarry,
             position: ""
         }
     }
@@ -148,9 +167,11 @@ console.log("submit")
 
 
     idx++;
+    countexp=0;
+    experiencesarry=[]
     //<div  newworker
 
-
+console.log("stockdesdonner",stockdesdonner)
 
 
     newworker.innerHTML = `   
@@ -306,6 +327,7 @@ function add_worker_to_work_space(xy) {
 
 //click on the append btn
 function appendtotheimge(id, xy) {
+
     console.log("append")
        if (xy === 1) {
         curentarry = son1arry
@@ -554,7 +576,7 @@ console.log("refrech the users on waiting room")
 
 
 
-
+let countexp =0;
 
 function addexperience() {
     //  partexperience = document.querySelector(".partexperience")
@@ -562,17 +584,47 @@ function addexperience() {
     // experiencefild = document.createElement("div")
     // experiencefild.className = "partexperience"
     let experiencefild = `
-        <label class="" for="experiences">experiences</label>
-        <input class="" id="experiences" type="text">
-        <input type="date" id="start-time" name="meeting-time">
-        <input type="date" id="end-time" name="meeting-time">
-        <input class="role_input" id="experiences" type="text">
+        <label class="" for="experiences">experiences :</label>
+         <label class="" for="">Title :</label>
+        <input class="Title"  type="text">
+         <label class="" for="Company">Company :</label>
+          <input class="role_input" id="Company" type="text">
+          <label class="" for="start-date">start-date :</label>
+        <input type="date" id="start-date" name="meeting-time">
+        <label class="" for="end-date">end-date :</label>
+        <input type="date" id="end-date" name="meeting-time">
+       
         `
 
     // father.append(experiencefild)
  btn_container.insertAdjacentHTML('beforebegin', experiencefild);
-    expériences = document.querySelector("#experiences")
+   exptitle=document.querySelectorAll(".Title")
+   expcompany=document.querySelector("#Company")
+   expstartdate=document.querySelector("#start-date")
+   expenddate=document.querySelector("#end-date")
+     exp = document.querySelector("#experiences")
+   
+     
 
+    if(countexp>0){
+             let experience={
+         title:exptitle[countexp-1].value,
+         company:expcompany.value,
+         startdate:expstartdate.value,
+         enddate:expenddate.value
+     }
+     experiencesarry.push(experience)
+     console.log("hi")
+    }
+    // if(exptitle.value !=="" && expcompany!=="" &&expstartdate!=="" &&expenddate!==""){
+
+    // }
+
+
+     console.log("experiencesarry1",experiencesarry)
+          console.log("countexp",countexp)
+
+countexp++
 }
 
 
