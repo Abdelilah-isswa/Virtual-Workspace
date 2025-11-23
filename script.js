@@ -742,7 +742,7 @@ console.log("//",stockdesdonner[0].expériences)
     //         expériences: experiencesarry,
 
 
-
+let userinfopopupexp
 
     for (let i = 0; i < stockdesdonner.length; i++) {
 
@@ -777,9 +777,18 @@ console.log("//",stockdesdonner[0].expériences)
 
 
     for (let index = 0; index < stockdesdonner[i].expériences.length; index++) {
-
-
+        userinfopopupexp = document.createElement("div")
+        userinfopopupexp.classList ="experiencedes"
         
+        userinfopopupexp.innerHTML =`
+        <div class="role">Title : ${stockdesdonner[i].expériences[index].title}</div>
+       <div class="role">Company : ${stockdesdonner[i].expériences[index].company}</div>
+       <div class="role">Start-date : ${stockdesdonner[i].expériences[index].startdate}</div>
+       <div class="role">End-date : ${stockdesdonner[i].expériences[index].enddate}</div>
+        
+        `
+
+
           console.log("exp name", stockdesdonner[i].expériences[index].title) 
         console.log("i",i)
        //  userinfopopup.innerHTM=`  <div class="name"> ${stockdesdonner[index].telephone}</div>
@@ -795,9 +804,9 @@ console.log("//",stockdesdonner[0].expériences)
     }
 
  console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
-
+   
     document.body.append(userinfopopup)
-    
+    userinfopopup.append(userinfopopupexp)
 
 
 }
