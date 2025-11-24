@@ -87,10 +87,12 @@ function btn_add_new_worker() {
     photo = document.querySelector("#Photo")
     email = document.querySelector("#email")
     telephone = document.querySelector("#phone")
-    img = document.querySelector("#Photo")
-    img.src = "img/img1.webp"
+    //img = document.querySelector("#Photo")
+   // img.src = "img/img1.webp"
     // expériences = document.querySelector("")
     btn_container = document.querySelector(".btn-container")
+    //////
+
 
 
 }
@@ -108,6 +110,22 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
+ if (validateForm()) {
+      
+        
+       
+      
+        
+        
+   
+        
+        alert('Employé ajouté avec succès!');
+      
+        
+  
+
+
+
     if (countexp > 0) {
 
         let experience = {
@@ -131,7 +149,7 @@ function submituserinfopopup() {
     //if(Nom.value==="" || role.value=="" || photo.value=="" || telephone.value==""||email.value==""){
     //  alert("Enter The info")
     // userinfopopup.remove()
-    // btn_add_new_worker()
+   // btn_add_new_worker()
     //}else{
     userinfopopup.remove()
     newworker = document.createElement("div")
@@ -161,11 +179,11 @@ function submituserinfopopup() {
         }
     }
 
-    if (employe.photo === "") {
-        employe.photo = img.src
-    } else {
-        console.log("you enterd an image")
-    }
+     if (employe.photo === "") {
+         employe.photo = "img/img1.webp"
+     } else {
+         
+     }
     stockdesdonner.push(employe)
 
 
@@ -195,6 +213,10 @@ function submituserinfopopup() {
 
 
     Add_New_Worker_space.append(newworker)
+      } else {
+        alert('Veuillez corriger les erreurs avant de soumettre le formulaire.');
+    }
+
 
     // }
 }
@@ -252,7 +274,7 @@ function add_worker_to_work_space(xy) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-   <img  class="userimg" src="img/img1.webp" alt="">
+   <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
      <div class="workerinfo">
        
         <div class="name">${stockdesdonner[i].nome}</div>
@@ -479,7 +501,7 @@ function refrech_the_users_that_are_added_to_son(xy) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-     <img  class="userimg" src="img/img1.webp" alt="">
+     <img  class="userimg" src="${curentarry[i].photo}" alt="">
        <div class="workerinfo">
            <div class="name">${curentarry[i].nome}</div>
           <div class="role">${curentarry[i].role}</div>
@@ -510,7 +532,7 @@ function refrech_the_users_that_are_in_the_waiting_room(id) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-    <img  class="userimg" src="img/img1.webp" alt="">
+    <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
       <div class="workerinfo">
    
          <div class="name">${stockdesdonner[i].nome}</div>
@@ -652,7 +674,7 @@ function reloadthenewworkerspace() {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-     <img  class="userimg" src="img/img1.webp" alt="">
+     <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
         <div class="workerinfo">
             <div class="name">${stockdesdonner[i].nome}</div>
            <div class="role">${stockdesdonner[i].role}</div>
@@ -688,7 +710,7 @@ function refreshAllSons() {
             let newworker = document.createElement("div");
             newworker.className = "newworker";
             newworker.innerHTML = `   
-                <img class="userimg" src="img/img1.webp" alt="">
+                <img class="userimg" src="${son.array[i].photo}" alt="">
                 <div class="workerinfo">
                     <div class="name">${son.array[i].nome}</div>
                     <div class="role">${son.array[i].role}</div>
@@ -781,6 +803,7 @@ let userinfopopupexp
         userinfopopupexp.classList ="experiencedes"
         
         userinfopopupexp.innerHTML =`
+        <h2>Expériences :</h2>
         <div class="role">Title : ${stockdesdonner[i].expériences[index].title}</div>
        <div class="role">Company : ${stockdesdonner[i].expériences[index].company}</div>
        <div class="role">Start-date : ${stockdesdonner[i].expériences[index].startdate}</div>
@@ -803,10 +826,62 @@ let userinfopopupexp
         }
     }
 
- console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
+// console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
    
     document.body.append(userinfopopup)
     userinfopopup.append(userinfopopupexp)
 
 
 }
+
+// Regex patterns
+const patterns = {
+    nom: /^[A-Za-zÀ-ÿ\s\-']{2,50}$/,
+    email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    phone: /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
+};
+
+// Simple validation function
+function validateForm() {
+    const nom = document.getElementById('Nom').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const role = document.getElementById('role').value;
+    const photo = document.getElementById('Photo').value.trim();
+
+    // Check if fields are filled
+    if (!nom) {
+        alert('Veuillez entrer un nom');
+        return false;
+    }
+    if (!email) {
+        alert('Veuillez entrer un email');
+        return false;
+    }
+    if (!phone) {
+        alert('Veuillez entrer un téléphone');
+        return false;
+    }
+    if (!role) {
+        alert('Veuillez sélectionner un rôle');
+        return false;
+    }
+
+    // Check patterns
+    if (!patterns.nom.test(nom)) {
+        alert('Le nom doit contenir uniquement des lettres (2-50 caractères)');
+        return false;
+    }
+    if (!patterns.email.test(email)) {
+        alert('Veuillez entrer une adresse email valide');
+        return false;
+    }
+    if (!patterns.phone.test(phone)) {
+        alert('Veuillez entrer un numéro de téléphone français valide');
+        return false;
+    }
+
+    return true;
+}
+
+
