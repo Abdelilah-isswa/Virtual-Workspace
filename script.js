@@ -87,10 +87,12 @@ function btn_add_new_worker() {
     photo = document.querySelector("#Photo")
     email = document.querySelector("#email")
     telephone = document.querySelector("#phone")
-    img = document.querySelector("#Photo")
-    img.src = "img/img1.webp"
+    //img = document.querySelector("#Photo")
+   // img.src = "img/img1.webp"
     // expériences = document.querySelector("")
     btn_container = document.querySelector(".btn-container")
+    //////
+
 
 
 }
@@ -108,6 +110,16 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
+
+    //  if(photo.value === ""){
+    //      photo.src = "img/img1.webp"
+    //  }else{
+    //      img.src= img.value
+    //  }
+
+
+
+
     if (countexp > 0) {
 
         let experience = {
@@ -131,7 +143,7 @@ function submituserinfopopup() {
     //if(Nom.value==="" || role.value=="" || photo.value=="" || telephone.value==""||email.value==""){
     //  alert("Enter The info")
     // userinfopopup.remove()
-    // btn_add_new_worker()
+   // btn_add_new_worker()
     //}else{
     userinfopopup.remove()
     newworker = document.createElement("div")
@@ -161,11 +173,11 @@ function submituserinfopopup() {
         }
     }
 
-    if (employe.photo === "") {
-        employe.photo = img.src
-    } else {
-        console.log("you enterd an image")
-    }
+     if (employe.photo === "") {
+         employe.photo = "img/img1.webp"
+     } else {
+         
+     }
     stockdesdonner.push(employe)
 
 
@@ -252,7 +264,7 @@ function add_worker_to_work_space(xy) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-   <img  class="userimg" src="img/img1.webp" alt="">
+   <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
      <div class="workerinfo">
        
         <div class="name">${stockdesdonner[i].nome}</div>
@@ -479,7 +491,7 @@ function refrech_the_users_that_are_added_to_son(xy) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-     <img  class="userimg" src="img/img1.webp" alt="">
+     <img  class="userimg" src="${curentarry[i].photo}" alt="">
        <div class="workerinfo">
            <div class="name">${curentarry[i].nome}</div>
           <div class="role">${curentarry[i].role}</div>
@@ -510,7 +522,7 @@ function refrech_the_users_that_are_in_the_waiting_room(id) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-    <img  class="userimg" src="img/img1.webp" alt="">
+    <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
       <div class="workerinfo">
    
          <div class="name">${stockdesdonner[i].nome}</div>
@@ -652,7 +664,7 @@ function reloadthenewworkerspace() {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-     <img  class="userimg" src="img/img1.webp" alt="">
+     <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
         <div class="workerinfo">
             <div class="name">${stockdesdonner[i].nome}</div>
            <div class="role">${stockdesdonner[i].role}</div>
@@ -688,7 +700,7 @@ function refreshAllSons() {
             let newworker = document.createElement("div");
             newworker.className = "newworker";
             newworker.innerHTML = `   
-                <img class="userimg" src="img/img1.webp" alt="">
+                <img class="userimg" src="${son.array[i].photo}" alt="">
                 <div class="workerinfo">
                     <div class="name">${son.array[i].nome}</div>
                     <div class="role">${son.array[i].role}</div>
@@ -810,3 +822,5 @@ let userinfopopupexp
 
 
 }
+
+// Regex patterns
