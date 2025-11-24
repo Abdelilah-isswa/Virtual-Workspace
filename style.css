@@ -11,7 +11,8 @@
 .father-son1,.father-son2,.father-son3,.father-son4,.father-son5,.father-son6{
     font-weight: 500;
     color: white;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
@@ -72,6 +73,7 @@ body {
     .name{
        
         font-weight: 700;
+        
     }
 }
 /*  second  */
@@ -134,7 +136,7 @@ body {
 }
 .son1,.son2,.son3,.son4,.son5,.son6{
 
-   
+   overflow-x: hidden;
     border: solid black 2px;
     overflow: auto;
     color: black;
@@ -398,6 +400,7 @@ height:  80px;
     transform: translate(-50%, -50%); 
  
     box-shadow: 25px 25px 30px rgb(0,0,0,0.1);
+    overflow: auto;
   
 }
 
@@ -480,7 +483,7 @@ height:  80px;
         background: white;
     border-radius: 5px;
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     min-height: 650px;
     max-height: 750px;
     display: flex;
@@ -488,7 +491,7 @@ height:  80px;
     padding: 30px;
     
     border: 1px solid rgba(255, 255, 255, 0.2);
-    overflow: auto;
+    overflow-x: hidden;
     animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: absolute;
     top: 50%;
@@ -1005,8 +1008,9 @@ justify-content: space-evenly;
 
 } */
 .name{
-     font-size: 1.4rem;
+     font-size: 1rem;
      color: #252b47;
+    
      
 
 }
@@ -1127,6 +1131,17 @@ flex-direction: column;
 justify-content: space-evenly;
 
 } */
+
+.name{
+   
+     color: #252b47;
+     
+
+}
+.role{
+     
+     color: #000;
+}
  @media (min-width:1024px) and (max-width:1279px) {
 
 
@@ -1151,13 +1166,13 @@ justify-content: space-evenly;
 
 
 .name{
-     font-size: 1.4rem;
+     font-size: 1rem;
      color: #252b47;
      
 
 }
 .role{
-     font-size: 1rem;
+     font-size: 0.8rem;
      color: #000;
 }
 
@@ -1178,6 +1193,7 @@ justify-content: space-evenly;
    max-width:800px;
    min-width:800px;
     .father-son1{
+        overflow-x: hidden;
     grid-column: 1/20;
     grid-row: 12/21;
      background-color: rgba(255, 0, 0, 0.504);
@@ -1222,6 +1238,17 @@ justify-content: space-evenly;
 }
 
 @media (min-width:1280px) {
+    .name{
+     font-size: 1rem;
+     color: #252b47;
+    
+     
+
+}
+.role{
+     font-size: 1rem;
+     color: #000;
+}
       .ex{
        display: none;
     }
