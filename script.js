@@ -110,13 +110,19 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
-
-    //  if(photo.value === ""){
-    //      photo.src = "img/img1.webp"
-    //  }else{
-    //      img.src= img.value
-    //  }
-
+ if (validateForm()) {
+      
+        
+       
+      
+        
+        
+   
+        
+        alert('Employé ajouté avec succès!');
+      
+        
+  
 
 
 
@@ -207,6 +213,10 @@ function submituserinfopopup() {
 
 
     Add_New_Worker_space.append(newworker)
+      } else {
+        alert('Veuillez corriger les erreurs avant de soumettre le formulaire.');
+    }
+
 
     // }
 }
@@ -793,6 +803,7 @@ let userinfopopupexp
         userinfopopupexp.classList ="experiencedes"
         
         userinfopopupexp.innerHTML =`
+        <h2>Expériences :</h2>
         <div class="role">Title : ${stockdesdonner[i].expériences[index].title}</div>
        <div class="role">Company : ${stockdesdonner[i].expériences[index].company}</div>
        <div class="role">Start-date : ${stockdesdonner[i].expériences[index].startdate}</div>
@@ -815,7 +826,7 @@ let userinfopopupexp
         }
     }
 
- console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
+// console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
    
     document.body.append(userinfopopup)
     userinfopopup.append(userinfopopupexp)
@@ -824,3 +835,53 @@ let userinfopopupexp
 }
 
 // Regex patterns
+const patterns = {
+    nom: /^[A-Za-zÀ-ÿ\s\-']{2,50}$/,
+    email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    phone: /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
+};
+
+// Simple validation function
+function validateForm() {
+    const nom = document.getElementById('Nom').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const role = document.getElementById('role').value;
+    const photo = document.getElementById('Photo').value.trim();
+
+    // Check if fields are filled
+    if (!nom) {
+        alert('Veuillez entrer un nom');
+        return false;
+    }
+    if (!email) {
+        alert('Veuillez entrer un email');
+        return false;
+    }
+    if (!phone) {
+        alert('Veuillez entrer un téléphone');
+        return false;
+    }
+    if (!role) {
+        alert('Veuillez sélectionner un rôle');
+        return false;
+    }
+
+    // Check patterns
+    if (!patterns.nom.test(nom)) {
+        alert('Le nom doit contenir uniquement des lettres (2-50 caractères)');
+        return false;
+    }
+    if (!patterns.email.test(email)) {
+        alert('Veuillez entrer une adresse email valide');
+        return false;
+    }
+    if (!patterns.phone.test(phone)) {
+        alert('Veuillez entrer un numéro de téléphone français valide');
+        return false;
+    }
+
+    return true;
+}
+
+
