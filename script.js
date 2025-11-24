@@ -1,6 +1,215 @@
 let userinfopopup;
 let usersendtowork;
-let stockdesdonner = [];
+let stockdesdonner = [
+    {
+        id: 0,
+        nome: "Youssef Alami",
+        role: "manager",
+        photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
+        email: "youssef.alami@worksphere.com",
+        telephone: "06 12 34 56 78",
+        expériences: [
+            {
+                title: "Project Manager",
+                company: "Tech Solutions Maroc",
+                startdate: "2018-03-15",
+                enddate: "2020-06-20"
+            }
+        ]
+    },
+    {
+        id: 1,
+        nome: "Fatima Zahra Benani",
+        role: "technician",
+        photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+        email: "fatima.benani@worksphere.com",
+        telephone: "06 23 45 67 89",
+        expériences: [
+            {
+                title: "IT Support Specialist",
+                company: "Digital Systems Casablanca",
+                startdate: "2019-01-10",
+                enddate: "2021-08-15"
+            }
+        ]
+    },
+    {
+        id: 2,
+        nome: "Mehdi El Fassi",
+        role: "receptionist",
+        photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+        email: "mehdi.elfassi@worksphere.com",
+        telephone: "06 34 56 78 90",
+        expériences: [
+            {
+                title: "Front Desk Agent",
+                company: "Hotel Rabat Palace",
+                startdate: "2020-02-01",
+                enddate: "2022-05-30"
+            }
+        ]
+    },
+    {
+        id: 3,
+        nome: "Nadia Toumi",
+        role: "security",
+        photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+        email: "nadia.toumi@worksphere.com",
+        telephone: "06 45 67 89 01",
+        expériences: [
+            {
+                title: "Security Officer",
+                company: "SafeGuard Maroc",
+                startdate: "2017-11-05",
+                enddate: "2020-09-18"
+            }
+        ]
+    },
+    {
+        id: 4,
+        nome: "Hassan Chraibi",
+        role: "cleaning",
+        photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face",
+        email: "hassan.chraibi@worksphere.com",
+        telephone: "06 56 78 90 12",
+        expériences: [
+            {
+                title: "Cleaning Supervisor",
+                company: "CleanPro Services Marrakech",
+                startdate: "2019-07-22",
+                enddate: "2021-12-10"
+            }
+        ]
+    },
+    {
+        id: 5,
+        nome: "Karim Bennis",
+        role: "technician",
+        photo: "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=150&h=150&fit=crop&crop=face",
+        email: "karim.bennis@worksphere.com",
+        telephone: "06 67 89 01 23",
+        expériences: [
+            {
+                title: "Network Administrator",
+                company: "ConnectNet Morocco",
+                startdate: "2020-08-14",
+                enddate: "2022-03-20"
+            }
+        ]
+    },
+    {
+        id: 6,
+        nome: "Sofia Akdim",
+        role: "receptionist",
+        photo: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=150&h=150&fit=crop&crop=face",
+        email: "sofia.akdim@worksphere.com",
+        telephone: "06 78 90 12 34",
+        expériences: [
+            {
+                title: "Administrative Assistant",
+                company: "Office Management Tangier",
+                startdate: "2021-01-08",
+                enddate: "2022-07-15"
+            }
+        ]
+    },
+    {
+        id: 7,
+        nome: "Omar Laaroussi",
+        role: "security",
+        photo: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face",
+        email: "omar.laaroussi@worksphere.com",
+        telephone: "06 89 01 23 45",
+        expériences: [
+            {
+                title: "Security Supervisor",
+                company: "Metro Security Casablanca",
+                startdate: "2018-05-30",
+                enddate: "2021-02-14"
+            }
+        ]
+    },
+    {
+        id: 8,
+        nome: "Khadija Moussa",
+        role: "cleaning",
+        photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
+        email: "khadija.moussa@worksphere.com",
+        telephone: "06 90 12 34 56",
+        expériences: [
+            {
+                title: "Janitorial Staff",
+                company: "Sparkle Clean Fes",
+                startdate: "2020-09-10",
+                enddate: "2022-04-05"
+            }
+        ]
+    },
+    {
+        id: 9,
+        nome: "Rachid Bouzouba",
+        role: "manager",
+        photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+        email: "rachid.bouzouba@worksphere.com",
+        telephone: "06 01 23 45 67",
+        expériences: [
+            {
+                title: "Team Lead",
+                company: "Innovate Solutions Morocco",
+                startdate: "2017-12-03",
+                enddate: "2020-08-19"
+            }
+        ]
+    },
+    {
+        id: 10,
+        nome: "Leila Saidi",
+        role: "technician",
+        photo: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face",
+        email: "leila.saidi@worksphere.com",
+        telephone: "06 12 34 56 78",
+        expériences: [
+            {
+                title: "IT Technician",
+                company: "Tech Support Maroc",
+                startdate: "2019-11-20",
+                enddate: "2022-06-12"
+            }
+        ]
+    },
+    {
+        id: 11,
+        nome: "Amine Kabbaj",
+        role: "receptionist",
+        photo: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=150&h=150&fit=crop&crop=face",
+        email: "amine.kabbaj@worksphere.com",
+        telephone: "06 23 45 67 89",
+        expériences: [
+            {
+                title: "Customer Service Representative",
+                company: "Service Excellence Casablanca",
+                startdate: "2021-03-15",
+                enddate: "2022-09-28"
+            }
+        ]
+    },
+    {
+        id: 12,
+        nome: "Zineb El Mansouri",
+        role: "security",
+        photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+        email: "zineb.elmansouri@worksphere.com",
+        telephone: "06 34 56 78 90",
+        expériences: [
+            {
+                title: "Security Guard",
+                company: "Protect All Morocco",
+                startdate: "2020-06-08",
+                enddate: "2022-01-22"
+            }
+        ]
+    }
+];
 let img;
 let curentarry;
 let Add_New_Worker_space = document.querySelector(".Add-New-Worker")
@@ -8,7 +217,7 @@ let newworker;
 let Nom, role, photo, email, telephone;
 let exptitle, expcompany, expstartdate, expenddate;
 let experiencesarry = [];
-let idx = 0;
+let idx = stockdesdonner.length;
 let son1arry = [];
 let son2arry = [];
 let son3arry = [];
@@ -110,116 +319,78 @@ function usersendtoworkpopup() {
 }
 //click on submit
 function submituserinfopopup() {
- if (validateForm()) {
-      
-        
-       
-      
-        
-        
-   
-        
-        alert('Employé ajouté avec succès!');
-      
-        
-  
-
-
-
-    if (countexp > 0) {
-
-        let experience = {
-            title: exptitle[countexp - 1].value,
-            company: expcompany[countexp - 1].value,
-            startdate: expstartdate[countexp - 1].value,
-            enddate: expenddate[countexp - 1].value
+    if (validateForm()) {
+        // Handle the last experience if countexp > 0
+        if (countexp > 0) {
+            let experience = {
+                title: exptitle[countexp - 1].value,
+                company: expcompany[countexp - 1].value,
+                startdate: expstartdate[countexp - 1].value,
+                enddate: expenddate[countexp - 1].value
+            }
+            
+            if (new Date(experience.startdate) > new Date(experience.enddate)) {
+                console.log("countexp", countexp)
+                countexp = 0
+                exituserinfopopup() 
+                alert("you have a probleme in experince date");
+                return;
+            } else {
+                experiencesarry.push(experience)
+            }
         }
-        experiencesarry.push(experience)
+
+        console.log("experiencesarry1", experiencesarry)
+        console.log("countexp", countexp)
+        console.log("submit")
+
+        userinfopopup.remove()
+        
+        let employe = {
+            id: idx,
+            nome: Nom.value,
+            role: role.value,
+            photo: photo.value,
+            email: email.value,
+            telephone: telephone.value,
+            expériences: [...experiencesarry],
+        }
+
+        if (employe.photo === "") {
+            employe.photo = "img/img1.webp"
+        }
+        
+        stockdesdonner.push(employe)
+
+        newworker = document.createElement("div")
+        newworker.className = "newworker"
+        newworker.innerHTML = `   
+            <img class="userimg" src="${employe.photo}" alt="" onclick="showuserinfo(${employe.id})">
+            <div class="workerinfo">
+                <div class="name">${employe.nome}</div>
+                <div class="role">${employe.role}</div>
+            </div>
+            <div class="workerbtn">
+                <button class="deletworker" onclick="deletuser(${employe.id})">x</button>
+            </div>`
+
+        Add_New_Worker_space.append(newworker)
+
+        idx++;
+        countexp = 0;
+        experiencesarry = []
+
+        console.log("stockdesdonner", stockdesdonner)
         console.log("hi")
 
+        // Refresh the waiting room
+        refrech_the_users_that_are_in_the_waiting_room();
 
-    }  
-
-
-
-    console.log("experiencesarry1", experiencesarry)
-    console.log("countexp", countexp)
-    console.log("submit")
-
-    //if(Nom.value==="" || role.value=="" || photo.value=="" || telephone.value==""||email.value==""){
-    //  alert("Enter The info")
-    // userinfopopup.remove()
-   // btn_add_new_worker()
-    //}else{
-    userinfopopup.remove()
-    newworker = document.createElement("div")
-    newworker.className = "newworker"
-    let employe
-    if (idx > 0) {
-        employe = {
-            id: idx,
-            nome: Nom.value,
-            role: role.value,
-            photo: photo.value,
-            email: email.value,
-            telephone: telephone.value,
-            expériences: experiencesarry,
-           
-        }
     } else {
-        employe = {
-            id: idx,
-            nome: Nom.value,
-            role: role.value,
-            photo: photo.value,
-            email: email.value,
-            telephone: telephone.value,
-            expériences: experiencesarry,
-           
-        }
-    }
-
-     if (employe.photo === "") {
-         employe.photo = "img/img1.webp"
-     } else {
-         
-     }
-    stockdesdonner.push(employe)
-
-
-    idx++;
-    countexp = 0;
-    experiencesarry = []
-    //<div  newworker
-
-    console.log("stockdesdonner", stockdesdonner)
-
-
-    newworker.innerHTML = `   
-   <img  class="userimg" src="${employe.photo}" alt="" onclick="showuserinfo(${employe.id})">
-     <div class="workerinfo">
-       
-        <div class="name">${employe.nome}</div>
-       <div class="role">${employe.role}</div>
-     </div>
-    
-    <div class="workerbtn">
-        
-        <button class="deletworker" onclick="deletuser(${employe.id})">x</button>
-   
-    </div>`
-
-
-
-
-    Add_New_Worker_space.append(newworker)
-      } else {
         alert('Veuillez corriger les erreurs avant de soumettre le formulaire.');
     }
-
-
-    // }
 }
+
 function deletuser(id) {
     console.log("delet")
 
@@ -233,21 +404,7 @@ function deletuser(id) {
     }
     stockdesdonner.splice(indextodeletinarry, 1)
 
-    for (let i = 0; i < stockdesdonner.length; i++) {
-        newworker = document.createElement("div")
-        newworker.className = "newworker"
-        newworker.innerHTML = `   
-     <img  class="userimg" src="img/img1.webp" alt="">
-       <div class="workerinfo">
-          <div class="name">${stockdesdonner[i].nome}</div>
-         <div class="role">${stockdesdonner[i].role}</div>
-       </div>
-      <div class="workerbtn">
-          
-          <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
-      </div>`
-        Add_New_Worker_space.append(newworker)
-    }
+refrech_the_users_that_are_in_the_waiting_room();
 
 
 
@@ -452,7 +609,7 @@ function appendtotheimge(id, xy) {
 
     refrech_the_users_that_are_added_to_son(xy);
     // refrech_the_users_that_are_added_to_son_in_case_append(xy)
-    refrech_the_users_that_are_in_the_waiting_room(id)
+    refrech_the_users_that_are_in_the_waiting_room()
 
     colorfun()
 
@@ -521,34 +678,26 @@ function refrech_the_users_that_are_added_to_son(xy) {
 
 }
 
-function refrech_the_users_that_are_in_the_waiting_room(id) {
+function refrech_the_users_that_are_in_the_waiting_room() {
     console.log("refrech the users on waiting room")
-
 
     Add_New_Worker_space.innerHTML = ''
 
-    // //<div  newworker
     for (let i = 0; i < stockdesdonner.length; i++) {
         newworker = document.createElement("div")
         newworker.className = "newworker"
         newworker.innerHTML = `   
-    <img  class="userimg" src="${stockdesdonner[i].photo}" alt="">
-      <div class="workerinfo">
-   
-         <div class="name">${stockdesdonner[i].nome}</div>
-        <div class="role">${stockdesdonner[i].role}</div>
-      </div>
-     <div class="workerbtn">
-        
-         <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
-    
-     </div>`
+            <img class="userimg" src="${stockdesdonner[i].photo}" alt="" onclick="showuserinfo(${stockdesdonner[i].id})">
+            <div class="workerinfo">
+                <div class="name">${stockdesdonner[i].nome}</div>
+                <div class="role">${stockdesdonner[i].role}</div>
+            </div>
+            <div class="workerbtn">
+                <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
+            </div>`
 
         Add_New_Worker_space.append(newworker)
     }
-
-
-
 }
 
 
@@ -581,10 +730,9 @@ function addexperience() {
     expenddate = document.querySelectorAll(".end-date")
     exp = document.querySelector("#experiences")
     let year1 = ""
-    for (let i = 0; i < 4; i++) {
-        console.log(i)
-        // year1 =  year1+   
-    }
+//    if(   ){
+
+//    }
 
     if (countexp > 0) {
         let experience = {
@@ -594,11 +742,17 @@ function addexperience() {
             enddate: expenddate[countexp - 1].value
         }
 
-        let d1 = new Date(expenddate[countexp - 1].value)
-        let d2 = new Date(expstartdate[countexp - 1].value)
-
-        console.log("expstartdatesssssss", (d1 - d2) / (1000 * 60 * 60 * 24))
-        experiencesarry.push(experience)
+        // let d1 = new Date(expenddate[countexp - 1].value)
+        // let d2 = new Date(expstartdate[countexp - 1].value)
+        // console.log("expstartdatesssssss", (d1 - d2) / (1000 * 60 * 60 * 24))
+               if(new Date(experience.startdate)>new Date(experience.enddate)){
+            console.log("countexp1",countexp)
+            
+        }else{
+            experiencesarry.push(experience)
+        }
+  
+      
 
 
         // console.log("start  year1",  expstarexperiencetdate.value)
@@ -651,7 +805,7 @@ function removeworkerfromson(id, xy) {
 
 
 
-    refrech_the_users_that_are_in_the_waiting_room(id)
+    refrech_the_users_that_are_in_the_waiting_room()
     refrech_the_users_that_are_added_to_son(xy)
 
 
@@ -838,7 +992,7 @@ let userinfopopupexp
 const patterns = {
     nom: /^[A-Za-zÀ-ÿ\s\-']{2,50}$/,
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-    phone: /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
+     phone: /^(06|07|05)\s*(\d{2}\s*){4}$/
 };
 
 // Simple validation function
@@ -884,4 +1038,32 @@ function validateForm() {
     return true;
 }
 
+/////
 
+
+
+
+
+
+function initializeWorkers() {
+    Add_New_Worker_space.innerHTML = '';
+    
+    for (let i = 0; i < stockdesdonner.length; i++) {
+        newworker = document.createElement("div");
+        newworker.className = "newworker";
+        newworker.innerHTML = `   
+            <img class="userimg" src="${stockdesdonner[i].photo}" alt="" onclick="showuserinfo(${stockdesdonner[i].id})">
+            <div class="workerinfo">
+                <div class="name">${stockdesdonner[i].nome}</div>
+                <div class="role">${stockdesdonner[i].role}</div>
+            </div>
+            <div class="workerbtn">
+                <button class="deletworker" onclick="deletuser(${stockdesdonner[i].id})">x</button>
+            </div>`;
+        
+        Add_New_Worker_space.append(newworker);
+    }
+}
+
+
+initializeWorkers();

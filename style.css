@@ -11,7 +11,8 @@
 .father-son1,.father-son2,.father-son3,.father-son4,.father-son5,.father-son6{
     font-weight: 500;
     color: white;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
@@ -72,6 +73,7 @@ body {
     .name{
        
         font-weight: 700;
+        
     }
 }
 /*  second  */
@@ -398,6 +400,7 @@ height:  80px;
     transform: translate(-50%, -50%); 
  
     box-shadow: 25px 25px 30px rgb(0,0,0,0.1);
+    overflow: auto;
   
 }
 
@@ -1005,8 +1008,9 @@ justify-content: space-evenly;
 
 } */
 .name{
-     font-size: 1.4rem;
+     font-size: 1rem;
      color: #252b47;
+    
      
 
 }
@@ -1127,6 +1131,17 @@ flex-direction: column;
 justify-content: space-evenly;
 
 } */
+
+.name{
+   
+     color: #252b47;
+     
+
+}
+.role{
+     
+     color: #000;
+}
  @media (min-width:1024px) and (max-width:1279px) {
 
 
@@ -1151,13 +1166,13 @@ justify-content: space-evenly;
 
 
 .name{
-     font-size: 1.4rem;
+     font-size: 1rem;
      color: #252b47;
      
 
 }
 .role{
-     font-size: 1rem;
+     font-size: 0.8rem;
      color: #000;
 }
 
@@ -1222,6 +1237,17 @@ justify-content: space-evenly;
 }
 
 @media (min-width:1280px) {
+    .name{
+     font-size: 1rem;
+     color: #252b47;
+    
+     
+
+}
+.role{
+     font-size: 1rem;
+     color: #000;
+}
       .ex{
        display: none;
     }
