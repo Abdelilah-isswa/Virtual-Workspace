@@ -898,95 +898,48 @@ function sidebarlogiqueexit() {
 function showuserinfo(id) {
     console.log("clicked")
 
-    //      let experience = {
-    //         title: exptitle[countexp - 1].value,
-    //         company: expcompany[countexp - 1].value,
-    //         startdate: expstartdate[countexp - 1].value,
-    //         enddate: expenddate[countexp - 1].value
-    //     }
-    //     experiencesarry.push(experience)
-    //     console.log("hi")
-
-console.log("//",stockdesdonner[0].expériences)
-    // }   employe = {
-    //         id: idx,
-    //         nome: Nom.value,
-    //         role: role.value,
-    //         photo: photo.value,
-    //         email: email.value,
-    //         telephone: telephone.value,
-    //         expériences: experiencesarry,
-
-
-let userinfopopupexp
-
     for (let i = 0; i < stockdesdonner.length; i++) {
-
         if (stockdesdonner[i].id === id) {
             userinfopopup = document.createElement("div")
             userinfopopup.className = "bigerfather"
-            userinfopopup.innerHTML = `
-    
-        <div class="showuserinfopopup">
-                <div class="imgandexit">
-                  <img  class="userimginfopopup" src="${stockdesdonner[i].photo}" alt="" ">
-               <button class="rovetheuserinfopopup" onclick="exituserinfopopup()">x</button>
-                </div>
-
-             
-     <div class="workerinfopopup">
-       
-        <div class="name">${stockdesdonner[i].nome}</div>
-       <div class="role">${stockdesdonner[i].role}</div>
-       <div class="role">Email : ${stockdesdonner[i].email}</div>
-       <div class="role">Phone : ${stockdesdonner[i].telephone}</div>
-      
-      
-     </div>
-    
             
-        
-    </div>
-    
-    `
-      
+            // Create experiences HTML first
+            let experiencesHTML = '';
+            for (let index = 0; index < stockdesdonner[i].expériences.length; index++) {
+                experiencesHTML += `
+                <div class="experiencedes">
+                    <h2>Expérience ${index + 1}:</h2>
+                    <div class="role">Title : ${stockdesdonner[i].expériences[index].title}</div>
+                    <div class="role">Company : ${stockdesdonner[i].expériences[index].company}</div>
+                    <div class="role">Start-date : ${stockdesdonner[i].expériences[index].startdate}</div>
+                    <div class="role">End-date : ${stockdesdonner[i].expériences[index].enddate}</div>
+                </div>
+                `;
+            }
 
+            userinfopopup.innerHTML = `
+                <div class="showuserinfopopup">
+                    <div class="imgandexit">
+                        <img class="userimginfopopup" src="${stockdesdonner[i].photo}" alt="">
+                        <button class="rovetheuserinfopopup" onclick="exituserinfopopup()">x</button>
+                    </div>
+                    <div class="workerinfopopup">
+                        <div class="name">${stockdesdonner[i].nome}</div>
+                        <div class="role">${stockdesdonner[i].role}</div>
+                        <div class="role">Email : ${stockdesdonner[i].email}</div>
+                        <div class="role">Phone : ${stockdesdonner[i].telephone}</div>
+                    </div>
+                    ${experiencesHTML}
+                </div>
+            `;
 
-    for (let index = 0; index < stockdesdonner[i].expériences.length; index++) {
-        userinfopopupexp = document.createElement("div")
-        userinfopopupexp.classList ="experiencedes"
-        
-        userinfopopupexp.innerHTML =`
-        <h2>Expériences :</h2>
-        <div class="role">Title : ${stockdesdonner[i].expériences[index].title}</div>
-       <div class="role">Company : ${stockdesdonner[i].expériences[index].company}</div>
-       <div class="role">Start-date : ${stockdesdonner[i].expériences[index].startdate}</div>
-       <div class="role">End-date : ${stockdesdonner[i].expériences[index].enddate}</div>
-        
-        `
-
-
-          console.log("exp name", stockdesdonner[i].expériences[index].title) 
-        console.log("i",i)
-       //  userinfopopup.innerHTM=`  <div class="name"> ${stockdesdonner[index].telephone}</div>
-    // `
-   }
-
-
-
-
-
-
+            document.body.append(userinfopopup);
+            break;
         }
     }
-
-// console.log("stockdesdonner[i].expériences", stockdesdonner[0].expériences[0].title)
-   
-    document.body.append(userinfopopup)
-    userinfopopup.append(userinfopopupexp)
-
-
 }
+
+
 
 // Regex patterns
 const patterns = {
